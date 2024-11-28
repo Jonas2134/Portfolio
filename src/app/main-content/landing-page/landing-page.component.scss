@@ -21,6 +21,7 @@ section {
 
     >div {
         @include dFlex($gap: 48px);
+        overflow: hidden;
 
         >button {
             border: 1px solid #ffffff;
@@ -36,11 +37,16 @@ section {
 
             >span {
                 display: inline-block;
-                transition: transform 0.3s ease;
+                transition: transform 1.3s ease;
+            }
 
-                &:hover>span {
-                    transform: translateX(-100%);
-                }
+            &:hover {
+                color: #3DCFB6;
+                border-color: #3DCFB6;
+            }
+
+            &:hover >span {
+                transform: translateX(-150%);
             }
         }
     }
