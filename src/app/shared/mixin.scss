@@ -1,0 +1,10 @@
+@mixin dFlex($justify: center, $align: center, $gap: 0px, $direction: null) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+
+    @if $direction !=null {
+        flex-direction: $direction;
+    }
+}
