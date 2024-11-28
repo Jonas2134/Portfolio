@@ -3,7 +3,7 @@
 header {
     @include dFlex($justify: space-between);
     padding: 40px 96px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), #292929);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.6) 80%);
 
     >div {
         @include dFlex($gap: 24px);
