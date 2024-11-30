@@ -34,6 +34,8 @@ section {
             cursor: pointer;
             overflow: hidden;
             outline: none;
+            position: relative;
+            z-index: 10;
 
             >span {
                 display: inline-block;
@@ -57,6 +59,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 0;
 
     >div {
         @include dFlex($justify: space-between, $align: flex-end);
@@ -86,9 +89,12 @@ section {
 }
 
 @keyframes arrow-bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(5px);
     }
+
     50% {
         transform: translateY(-5px);
     }
@@ -96,6 +102,38 @@ section {
 
 .link-container {
     @include dFlex($gap: 16px, $direction: column);
+
+    >a {
+        position: relative;
+
+        .hover-icon {
+            transition: fill 0.3s ease;
+        }
+
+        &:hover {
+
+            .hover-icon path {
+                fill: #FFFFFF;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            transform: translateY(-50%);
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+            background-color: #6AD7BF;
+        }
+    }
 }
 
 .mail {
