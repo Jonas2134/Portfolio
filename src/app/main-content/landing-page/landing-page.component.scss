@@ -45,9 +45,73 @@ section {
                 border-color: #3DCFB6;
             }
 
-            &:hover >span {
+            &:hover>span {
                 transform: translateX(-150%);
             }
         }
     }
+}
+
+.navigation-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    >div {
+        @include dFlex($justify: space-between, $align: flex-end);
+        width: 100%;
+        padding: 0 60px;
+    }
+}
+
+.container {
+    @include dFlex($justify: start, $gap: 24px, $direction: column);
+}
+
+.arrow-button {
+    border: 1px solid #3DCFB6;
+    border-radius: 100px;
+    background-color: transparent;
+    @include dFlex();
+    padding: 15px 10px;
+    cursor: pointer;
+
+    >span {
+        color: #FFFFFF;
+        font-size: 25px;
+        animation: arrow-bounce 1.5s ease-in-out infinite;
+        display: inline-block;
+    }
+}
+
+@keyframes arrow-bounce {
+    0%, 100% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.link-container {
+    @include dFlex($gap: 16px, $direction: column);
+}
+
+.mail {
+    text-decoration: none;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 18px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    &:hover {
+        color: #3DCFB6;
+    }
+}
+
+.line {
+    width: 1px;
+    background-color: #3DCFB6;
 }

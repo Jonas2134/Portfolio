@@ -1,12 +1,38 @@
 <section>
-    <h2>Frontend Developer</h2>
-    <h1>Jonas Stiefer</h1>
-    <div>
+    <h2 class="font-firacode">Frontend Developer</h2>
+    <h1 class="font-karla">Jonas Stiefer</h1>
+    <div class="font-karla">
         <button>
             <span>Check my work</span>
         </button>
         <button>
             <span>Contact me</span>
         </button>
+    </div>
+
+    <div class="navigation-container">
+        <div>
+            <div class="container">
+                <button class="arrow-button">
+                    <span>↓</span>
+                </button>
+                <div class="line" [ngStyle]="{'height': '23vh'}"></div>
+            </div>
+    
+            <div class="container">
+                <div class="link-container">
+                    <a class="mail font-karla" href="">meine Email</a>
+
+                    <a href="">
+                        <img src="assets/img/github-logo.svg" alt="Github Logo">
+                    </a>
+
+                    <a href="">
+                        <img src="assets/img/linkedin-logo.svg" alt="LinkedIn Logo">
+                    </a>
+                </div>
+                <div class="line" [ngStyle]="{'height': '20vh'}"></div>
+            </div>
+        </div>
     </div>
 </section>

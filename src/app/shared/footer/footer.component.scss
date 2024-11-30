@@ -2,6 +2,7 @@
 
 footer {
     @include dFlex($justify: space-around);
+    padding: 64px 0;
 
     .developer-section {
         @include dFlex($align: start, $gap: 10px, $direction: column);
