@@ -104,7 +104,6 @@ section {
     @include dFlex($gap: 16px, $direction: column);
 
     >a {
-        position: relative;
 
         .hover-icon {
             transition: fill 0.3s ease;
@@ -116,23 +115,27 @@ section {
                 fill: #FFFFFF;
             }
         }
+    }
+}
 
-        &::after {
-            content: '';
-            position: absolute;
-            right: -15px;
-            transform: translateY(-50%);
-            top: 50%;
-            width: 8px;
-            height: 8px;
-            background-color: transparent;
-            border-radius: 50%;
-            transition: background-color 0.3s ease-in-out;
-        }
+.social-link {
+    position: relative;
 
-        &:hover::after {
-            background-color: #6AD7BF;
-        }
+    &::after {
+        content: '';
+        position: absolute;
+        right: -15px;
+        transform: translateY(-50%);
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        background-color: #6AD7BF;
     }
 }
 
