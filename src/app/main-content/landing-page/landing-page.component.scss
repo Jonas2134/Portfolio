@@ -54,6 +54,7 @@ section {
     }
 }
 
+/* Navigation Container */
 .navigation-container {
     position: absolute;
     left: 0;
@@ -155,4 +156,35 @@ section {
 .line {
     width: 1px;
     background-color: #3DCFB6;
+}
+
+/* Strip */
+.strip {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    z-index: 5;
+    height: 62px;
+    width: 100vw;
+    transform: translateX(-50%) rotate(-3deg);
+    backdrop-filter: blur(5.3px);
+    background-color: #ffffff1f;
+
+    >span {
+        width: 100%;
+        font-size: 32px;
+        font-weight: 400;
+        color: #fff;
+        animation: scroll-left 10s linear infinite;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
