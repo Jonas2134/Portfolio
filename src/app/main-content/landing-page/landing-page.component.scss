@@ -2,6 +2,7 @@
 
 section {
     height: 100vh;
+    width: 100vw;
     @include dFlex($direction: column);
     background: linear-gradient(55deg, #1C1C1C 30%, #08463B 90%);
 
@@ -162,7 +163,7 @@ section {
 .strip {
     position: absolute;
     bottom: 5vh;
-    left: 50%;
+    left: 50.7%;
     z-index: 5;
     height: 62px;
     width: 100vw;
