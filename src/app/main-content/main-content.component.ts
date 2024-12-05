@@ -5,11 +5,12 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { SliderComponent } from './slider/slider.component';
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [CommonModule, LandingPageComponent, AboutMeComponent, SkillSetComponent, FeaturedProjectsComponent, ContactMeComponent],
+  imports: [CommonModule, LandingPageComponent, AboutMeComponent, SkillSetComponent, FeaturedProjectsComponent, ContactMeComponent, SliderComponent],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })

@@ -5,6 +5,7 @@ section {
     width: 100vw;
     @include dFlex($direction: column);
     background: linear-gradient(55deg, #1C1C1C 30%, #08463B 90%);
+    overflow: hidden;
 
     >h2 {
         font-size: 40px;
