@@ -30,9 +30,12 @@
         </div>
 
         <div class="font-firacode skill-container">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, eius. Tempora, dignissimos nam! Fuga ab
-            totam voluptatibus tenetur dignissimos eos blanditiis voluptates, id, ullam at molestias assumenda autem
-            corrupti necessitatibus?
+            @for (skill of skills; track skill.name) {
+                <div>
+                    <img src="../../../assets/img/{{ skill.img }}">
+                    <span>{{ skill.name }}</span>
+                </div>
+            }
         </div>
     </div>
 </section>

@@ -3,7 +3,7 @@
 section {
     position: relative;
     @include dFlex($align: flex-start, $gap: 20px, $direction: column);
-    padding: 0 90px 90px 90px;
+    padding: 0 180px 90px 180px;
     color: #3DCFB6;
 
     &::before {
@@ -11,9 +11,9 @@ section {
         position: absolute;
         top: 0;
         left: -30%;
-        width: 50%;
+        width: 60%;
         height: 100%;
-        background: radial-gradient(circle, rgba(8, 70, 59, 0.3) 0%, rgba(8, 70, 59, 0.15) 45%, transparent 75%, transparent 100%);
+        background: radial-gradient(circle, rgba(8, 70, 59, 0.3) 0%, transparent 50%);
         clip-path: inset(0 0 0 50%);
         pointer-events: none;
     }
@@ -26,7 +26,7 @@ section {
 
     >div {
         width: 100%;
-        @include dFlex($justify: space-between);
+        @include dFlex($justify: space-around, $align: flex-start, $gap: 80px);
     }
 }
 
@@ -102,4 +102,28 @@ section {
 
 .skill-container {
     max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    >div {
+        width: 105px;
+        height: 120px;
+        @include dFlex($justify: flex-start, $gap: 8px, $direction: column);
+
+        >img {
+            transition: all 200ms ease-out;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+
+        >span {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+    }
 }
