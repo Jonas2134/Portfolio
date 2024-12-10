@@ -1,0 +1,73 @@
+@import '../../../shared/mixin.scss';
+
+section {
+    position: relative;
+    @include dFlex($justify: flex-start);
+    width: 100%;
+
+    .skill-line {
+        @include dFlex($justify: space-between);
+        width: 800px;
+        padding: 40px 32px;
+        border-bottom: 1px solid #3DCFB6;
+        transition: background-color 0.2s ease;
+
+        .project-name {
+            @include dFlex($gap: 3px);
+
+            >h3 {
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            .arrow-img {
+                opacity: 0;
+                transition: opacity 0.2s ease;
+            }
+        }
+
+        .project-skills {
+            @include dFlex($gap: 4px);
+        }
+
+        &:hover {
+            background-color: #3DCFB64D;
+
+            .project-name .arrow-img {
+                opacity: 1;
+            }
+
+            ~ .image-container {
+                opacity: 1;   
+            }
+        }
+    }
+}
+
+.image-container {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+
+    >img {
+        position: relative;
+        z-index: 5;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(135deg, transparent, transparent 10px, #3DCFB6 10px, #3DCFB6 11px);
+        border-radius: 30px;
+        z-index: 1;
+        transform: translate(15px, 15px);
+    }
+}
+
+.border-top {
+    border-top: 1px solid #3DCFB6;
+}

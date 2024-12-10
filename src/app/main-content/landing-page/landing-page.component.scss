@@ -2,7 +2,7 @@
 
 section {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     @include dFlex($direction: column);
     background: linear-gradient(55deg, #1C1C1C 30%, #08463B 90%);
     overflow: hidden;
@@ -10,14 +10,12 @@ section {
     >h2 {
         font-size: 40px;
         font-weight: 400;
-        margin: 0;
         color: #D9D9D9;
     }
 
     >h1 {
         font-size: 128px;
         font-weight: 700;
-        margin: 0;
         color: #D9D9D9;
     }
 
@@ -92,7 +90,6 @@ section {
 }
 
 @keyframes arrow-bounce {
-
     0%,
     100% {
         transform: translateY(5px);
@@ -167,10 +164,11 @@ section {
     left: 50%;
     z-index: 5;
     height: 62px;
-    width: 105vw;
+    width: 100%;
     transform: translateX(-50%) rotate(-3deg);
     backdrop-filter: blur(5.3px);
     background-color: #ffffff1f;
+    overflow: hidden;
 
     >span {
         width: 100%;
@@ -178,6 +176,7 @@ section {
         font-weight: 400;
         color: #fff;
         animation: scroll-left 10s linear infinite;
+        overflow: hidden;
     }
 }
 

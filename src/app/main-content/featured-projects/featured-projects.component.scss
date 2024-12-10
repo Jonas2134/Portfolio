@@ -1,0 +1,30 @@
+@import '../../shared/mixin.scss';
+
+section {
+    @include dFlex($align: normal, $gap: 20px, $direction: column);
+    padding: 0 96px;
+    color: #FFFFFF;
+
+    >h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #3DCFB6;
+    }
+
+    >h1 {
+        padding-bottom: 21px;
+        font-size: 64px;
+        font-weight: 700;
+        color: #3DCFB6;
+    }
+
+    >span {
+        padding-bottom: 21px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
+.poject-list {
+    max-width: 800px;
+}

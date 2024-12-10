@@ -14,12 +14,10 @@ section {
         width: 60%;
         height: 100%;
         background: radial-gradient(circle, rgba(8, 70, 59, 0.3) 0%, transparent 50%);
-        clip-path: inset(0 0 0 50%);
         pointer-events: none;
     }
 
     >h2 {
-        margin: 0;
         font-size: 24px;
         font-weight: 700;
     }
@@ -41,7 +39,6 @@ section {
 
 
     >h1 {
-        margin: 0;
         font-size: 64px;
         font-weight: 700;
     }
@@ -59,7 +56,6 @@ section {
             @include dFlex($align: flex-start, $gap: 16px, $direction: column);
 
             >h2 {
-                margin: 0;
                 font-size: 24px;
                 font-weight: 700;
 

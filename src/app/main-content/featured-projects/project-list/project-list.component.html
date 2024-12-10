@@ -1,0 +1,22 @@
+<section>
+    <div class="skill-line" [ngClass]="{'border-top': isFirstProject}">
+        <div class="project-name">
+            <h3 class="font-firacode">{{ projectName }}</h3>
+            <img class="arrow-img" src="../../../../assets/img/arrow_outward.svg">
+        </div>
+    
+        <div class="project-skills">
+            @for (skills of projectSkills; track $index) {
+                <span>{{ skills }}</span>
+    
+                @if ($index < projectSkills.length - 1) {
+                    <span>|</span>
+                }
+            }
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="../../../../assets/img/{{ projectIMG }}">
+    </div>
+</section>
