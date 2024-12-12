@@ -1,22 +1,25 @@
 <section>
-    <div class="skill-line" [ngClass]="{'border-top': isFirstProject}">
+    <div (click)="openCard()" class="skill-line" [ngClass]="{'border-top': isFirstProject}">
         <div class="project-name">
-            <h3 class="font-firacode">{{ projectName }}</h3>
+            <h3 class="font-firacode">{{ projects[index].projectName }}</h3>
             <img class="arrow-img" src="../../../../assets/img/arrow_outward.svg">
         </div>
-    
+
         <div class="project-skills">
-            @for (skills of projectSkills; track $index) {
-                <span>{{ skills }}</span>
-    
-                @if ($index < projectSkills.length - 1) {
-                    <span>|</span>
+            @for (skills of projects[index].projectSkills; track $index) {
+            <span>{{ skills }}</span>
+
+            @if ($index < projects[index].projectSkills.length - 1) { <span>|</span>
                 }
-            }
+                }
         </div>
     </div>
 
     <div class="image-container">
-        <img src="../../../../assets/img/{{ projectIMG }}">
+        <img src="../../../../assets/img/{{ projects[index].projectIMG }}">
     </div>
 </section>
+
+@if (isCardOpen) {
+    <app-single-project (close)="closeCard()" [projects]="projects" [index]="index"></app-single-project>
+}

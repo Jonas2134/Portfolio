@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-single-project',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './single-project.component.html',
   styleUrl: './single-project.component.scss'
 })
 export class SingleProjectComponent {
+  @Input() projects!: any[];
+  @Input() index!: number;
 
+  @Output() close = new EventEmitter<void>();
+
+  closeCard() {
+    this.close.emit();
+  }
 }

@@ -1,0 +1,55 @@
+@import '../../../shared/mixin.scss';
+
+section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    @include dFlex();
+
+    >div {
+        position: relative;
+        width: 60vw;
+        padding: 92px 80px;
+        @include dFlex($gap: 88px);
+        background: linear-gradient(55deg, #1C1C1C 30%, #08463B 90%);
+        border-radius: 30px;
+        border: 1px solid #3DCFB6;
+    }
+}
+
+.description-container {
+    @include dFlex($align: flex-start, $gap: 20px, $direction: column);
+
+    >h2 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
+
+.image-container {
+    
+    
+    .close {
+        position: absolute;
+        top: 15%;
+        right: 10%;
+    }
+}
+
+.green-color {
+    color: #3DCFB6;
+}
+
+.f-size-128 {
+    font-size: 128px;
+    font-weight: 700;
+}
+
+.f-size-64 {
+    font-size: 64px;
+    font-weight: 700;
+}

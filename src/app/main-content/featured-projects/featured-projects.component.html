@@ -11,12 +11,7 @@
 
     <div>
         @for (project of projects; track $index) {
-            <app-project-list 
-            projectName="{{ project.projectName }}"
-            [projectSkills]="project.projectSkills"
-            projectIMG="{{ project.projectIMG }}"
-            [isFirstProject]="$index === 0">
-            </app-project-list>
+            <app-project-list [projects]="projects" [index]="$index" [isFirstProject]="$index === 0"></app-project-list>
         }
     </div>
 </section>
