@@ -1,0 +1,112 @@
+@import "../../shared/mixin.scss";
+
+section {
+  @include dFlex($gap: 48px, $direction: column);
+  padding: 114px 0;
+
+  > h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3dcfb6;
+  }
+
+  .slider-container {
+    @include dFlex($gap: 48px, $direction: column);
+  }
+}
+
+.comments {
+  @include dFlex($direction: row);
+  overflow: hidden;
+  width: 100%;
+
+  .comment {
+    @include dFlex($direction: column);
+    width: 500px;
+    padding: 40px;
+    border: 1px solid #3dcfb6;
+    border-radius: 32px;
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+
+    > span {
+      padding: 60px 0;
+    }
+  }
+}
+
+.comment.center {
+  opacity: 1;
+  color: #ffffff;
+  background-color: #3dcfb64d;
+}
+
+.comment.left,
+.comment.right {
+  color: #ffffffcc;
+  background-color: #3dcfb61a;
+  transform: scale(0.8);
+}
+
+.comment.left {
+  opacity: 0.8;
+}
+
+.comment.right {
+  opacity: 0.8;
+}
+
+.author-section {
+  @include dFlex($gap: 10px);
+  width: 100%;
+
+  >div {
+    height: 1px;
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+}
+
+.back-or-forward {
+  @include dFlex($gap: 30px);
+
+  > svg {
+    cursor: pointer;
+
+    path {
+      transition: fill 0.3s ease;
+    }
+
+    &:hover path {
+      fill: #3dcfb6;
+    }
+  }
+
+  > div {
+    @include dFlex($gap: 15px);
+
+    > div {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ffffff;
+    }
+  }
+}
+
+.back {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateX(-5px);
+  }
+}
+
+.forward {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}

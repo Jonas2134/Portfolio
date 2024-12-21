@@ -8,10 +8,8 @@
         <div class="project-skills">
             @for (skills of projects[index].projectSkills; track $index) {
             <span>{{ skills }}</span>
-
-            @if ($index < projects[index].projectSkills.length - 1) { <span>|</span>
-                }
-                }
+            @if ($index < projects[index].projectSkills.length - 1) { <span>|</span> }
+            }
         </div>
     </div>
 
@@ -21,5 +19,5 @@
 </section>
 
 @if (isCardOpen) {
-    <app-single-project (close)="closeCard()" [projects]="projects" [index]="index"></app-single-project>
+<app-single-project (close)="closeCard()" [projects]="projects" [index]="index"></app-single-project>
 }
