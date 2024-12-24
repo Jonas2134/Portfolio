@@ -4,8 +4,9 @@
     <div class="slider-container">
         <div class="comments">
             @for (comment of visibleComments; track $index) {
-            <div [class.highlight]="isHighlighted($index)" [class.center]="$index === 1" [class.left]="$index === 0"
-                [class.right]="$index === 2" class="comment font-karla">
+            <div [class.center]="$index === 1" [class.left]="$index === 0"
+                [class.right]="$index === 2" [class.animate-left]="isAnimatingLeft"
+                [class.animate-right]="isAnimatingRight" class="comment font-karla">
                 <span>
                     {{ comment.commentary }}
                 </span>
@@ -28,7 +29,7 @@
 
             <div>
                 @for (comment of comments; track $index) {
-                    <div></div>
+                <div [class.active]="isPointHighlighted($index)"></div>
                 }
             </div>
 

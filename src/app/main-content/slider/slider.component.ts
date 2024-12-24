@@ -31,11 +31,13 @@ export class SliderComponent {
       author: 'Talia Schröder',
     },
   ];
+
   currentIndex: number = 0;
+  isAnimatingLeft = false;
+  isAnimatingRight = false;
 
   get visibleComments() {
-    const prevIndex =
-      (this.currentIndex - 1 + this.comments.length) % this.comments.length;
+    const prevIndex = (this.currentIndex - 1 + this.comments.length) % this.comments.length;
     const nextIndex = (this.currentIndex + 1) % this.comments.length;
     return [
       this.comments[prevIndex],
@@ -45,15 +47,26 @@ export class SliderComponent {
   }
 
   nextComment(): void {
+    this.isAnimatingLeft = true;
     this.currentIndex = (this.currentIndex + 1) % this.comments.length;
+    setTimeout(() => {
+      this.isAnimatingLeft = false;
+    }, 500);
   }
 
   prevComment(): void {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.comments.length) % this.comments.length;
+    this.isAnimatingRight = true;
+    this.currentIndex = (this.currentIndex - 1 + this.comments.length) % this.comments.length;
+    setTimeout(() => {
+      this.isAnimatingRight = false;
+    }, 500);
   }
 
   isHighlighted(index: number): boolean {
+    return this.currentIndex === index;
+  }
+
+  isPointHighlighted(index: number): boolean {
     return this.currentIndex === index;
   }
 }

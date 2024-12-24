@@ -28,43 +28,68 @@ section {
     border-radius: 32px;
     font-size: 18px;
     font-weight: 400;
-    transition: all 0.3s ease;
 
     > span {
       padding: 60px 0;
     }
+
+    &.center {
+      opacity: 1;
+      color: #ffffff;
+      background-color: #3dcfb64d;
+    }
+
+    &.left,
+    &.right {
+      color: #ffffffcc;
+      background-color: #3dcfb61a;
+      transform: scale(0.8);
+    }
+
+    &.left {
+      opacity: 0.8;
+    }
+
+    &.right {
+      opacity: 0.8;
+    }
+
+    &.animate-left {
+      animation: animateLeft 500ms ease forwards;
+    }
+
+    &.animate-right {
+      animation: animateRight 500ms ease forwards;
+    }
   }
 }
 
-.comment.center {
-  opacity: 1;
-  color: #ffffff;
-  background-color: #3dcfb64d;
+@keyframes animateLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-.comment.left,
-.comment.right {
-  color: #ffffffcc;
-  background-color: #3dcfb61a;
-  transform: scale(0.8);
-}
-
-.comment.left {
-  opacity: 0.8;
-}
-
-.comment.right {
-  opacity: 0.8;
+@keyframes animateRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .author-section {
   @include dFlex($gap: 10px);
   width: 100%;
 
-  >div {
+  > div {
     height: 1px;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 }
 
@@ -91,6 +116,11 @@ section {
       height: 8px;
       border-radius: 50%;
       background-color: #ffffff;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        background-color: #3dcfb6;
+      }
     }
   }
 }
