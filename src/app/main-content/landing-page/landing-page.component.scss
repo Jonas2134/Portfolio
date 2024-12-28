@@ -39,7 +39,6 @@ section {
 
             >span {
                 display: inline-block;
-                transition: transform 1.3s ease;
             }
 
             &:hover {
@@ -48,7 +47,7 @@ section {
             }
 
             &:hover>span {
-                transform: translateX(-150%);
+                @include scroll-left-animation($duration: 2s);
             }
         }
     }
@@ -176,16 +175,7 @@ section {
         font-weight: 400;
         color: #fff;
         animation: scroll-left 10s linear infinite;
+        @include scroll-left-animation($duration: 10s);
         overflow: hidden;
-    }
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
     }
 }

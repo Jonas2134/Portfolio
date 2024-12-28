@@ -1,125 +1,127 @@
-@import '../../shared/mixin.scss';
+@import "../../shared/mixin.scss";
 
 section {
-    position: relative;
-    @include dFlex($align: flex-start, $gap: 20px, $direction: column);
-    padding: 0 180px 90px 180px;
-    color: #3DCFB6;
+  position: relative;
+  @include dFlex($align: flex-start, $gap: 20px, $direction: column);
+  padding: 0 180px 90px 180px;
+  color: #3dcfb6;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -30%;
-        width: 60%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(8, 70, 59, 0.3) 0%, transparent 50%);
-        pointer-events: none;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      rgba(8, 70, 59, 0.3) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
 
-    >h2 {
-        font-size: 24px;
-        font-weight: 700;
-    }
+  >h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
 
-    >div {
-        width: 100%;
-        @include dFlex($justify: space-around, $align: flex-start, $gap: 80px);
-    }
+  >div {
+    width: 100%;
+    @include dFlex($justify: space-around, $align: flex-start, $gap: 80px);
+  }
 }
 
 .skill-set-container {
+  @include dFlex($align: flex-start, $gap: 32px, $direction: column);
+  border: 1px solid #3dcfb6;
+  border-radius: 30px;
+  background: #3dcfb61a;
+  backdrop-filter: blur(4px);
+  padding: 32px;
+  max-width: 500px;
+
+  >h1 {
+    font-size: 64px;
+    font-weight: 700;
+  }
+
+  >div {
+    font-size: 18px;
+    color: #ffffff;
     @include dFlex($align: flex-start, $gap: 32px, $direction: column);
-    border: 1px solid #3DCFB6;
-    border-radius: 30px;
-    background: #3DCFB61A;
-    backdrop-filter: blur(4px);
-    padding: 32px;
-    max-width: 500px;
 
-
-    >h1 {
-        font-size: 64px;
-        font-weight: 700;
+    >span {
+      display: block;
     }
 
     >div {
-        font-size: 18px;
-        color: #FFFFFF;
-        @include dFlex($align: flex-start, $gap: 32px, $direction: column);
+      @include dFlex($align: flex-start, $gap: 16px, $direction: column);
+
+      >h2 {
+        font-size: 24px;
+        font-weight: 700;
 
         >span {
-            display: block;
+          color: #3dcfb6;
         }
+      }
+    }
+  }
 
-        >div {
-            @include dFlex($align: flex-start, $gap: 16px, $direction: column);
+  >button {
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #292929;
+    padding: 10px 20px;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    position: relative;
+    z-index: 10;
 
-            >h2 {
-                font-size: 24px;
-                font-weight: 700;
-
-                >span {
-                    color: #3DCFB6;
-                }
-            }
-        }
+    >span {
+      display: inline-block;
     }
 
-    >button {
-        border: 1px solid #ffffff;
-        border-radius: 100px;
-        font-size: 18px;
-        font-weight: 400;
-        color: #ffffff;
-        background-color: #292929;
-        padding: 10px 20px;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
-        position: relative;
-        z-index: 10;
-
-        >span {
-            display: inline-block;
-            transition: transform 1.3s ease;
-        }
-
-        &:hover {
-            color: #3DCFB6;
-            border-color: #3DCFB6;
-        }
-
-        &:hover>span {
-            transform: translateX(-150%);
-        }
+    &:hover {
+      color: #3dcfb6;
+      border-color: #3dcfb6;
     }
+
+    &:hover > span {
+        @include scroll-left-animation($duration: 2s);
+    }
+  }
 }
 
 .skill-container {
-    max-width: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
 
-    >div {
-        width: 105px;
-        height: 120px;
-        @include dFlex($justify: flex-start, $gap: 8px, $direction: column);
+  >div {
+    width: 105px;
+    height: 120px;
+    @include dFlex($justify: flex-start, $gap: 8px, $direction: column);
 
-        >img {
-            transition: all 200ms ease-out;
+    >img {
+      transition: all 200ms ease-out;
 
-            &:hover {
-                scale: 1.1;
-            }
-        }
-
-        >span {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 400;
-            color: #FFFFFF;
-        }
+      &:hover {
+        scale: 1.1;
+      }
     }
+
+    >span {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
 }
