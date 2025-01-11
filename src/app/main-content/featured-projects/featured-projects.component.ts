@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-featured-projects',
   standalone: true,
-  imports: [CommonModule, ProjectListComponent],
+  imports: [CommonModule, ProjectListComponent, TranslatePipe],
   templateUrl: './featured-projects.component.html',
   styleUrl: './featured-projects.component.scss'
 })
@@ -15,15 +16,13 @@ export class FeaturedProjectsComponent {
       projectName: 'Join',
       projectSkills: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       projectIMG: 'join.png',
-      projectDescription: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      projectDescription: 'projects.joinDescription'
     },
     {
-      projectName: 'El Pollo Loco',
+      projectName: 'Sharkie',
       projectSkills: ['HTML', 'CSS', 'JavaScript'],
       projectIMG: 'el-pollo-loco.png',
-      projectDescription: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-    },
+      projectDescription: 'projects.sharkieDescription'
+    }
   ];
-
-
 }

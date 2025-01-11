@@ -1,13 +1,9 @@
 <section class="font-karla">
     <h2>Portfolio</h2>
 
-    <h1 class="font-firacode">Featured Projects</h1>
+    <h1 class="font-firacode">{{ 'projects.title' | translate }}</h1>
 
-    <span>
-        Explore a selection of my work here - Interact with
-        <br>
-        projects to see my skills in action.
-    </span>
+    <span [innerHTML]="'projects.text' | translate"></span>
 
     <div>
         @for (project of projects; track $index) {

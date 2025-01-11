@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })
@@ -21,6 +22,4 @@ export class SkillSetComponent {
     { img: "api.svg", name: "Rest-Api" },
     { img: "scrum.svg", name: "Scrum" },
   ];
-
-
 }

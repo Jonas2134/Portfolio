@@ -1,43 +1,38 @@
 <section class="font-karla">
     <div class="contact-container">
-        <h2>Contact me</h2>
+        <h2>{{ 'global.contactMe' | translate }}</h2>
 
-        <h1 class="font-firacode">
-            Let's work
-            <br>
-            together
-        </h1>
+        <h1 class="font-firacode" [innerHTML]="'form.title' | translate"></h1>
 
-        <span class="font-firacode">Got a problem to solve?</span>
+        <span class="font-firacode">{{ 'form.subtitle' | translate }}</span>
 
         <p>
-            Contact me through this form, I am interested in hearing from you, knowing
-            <br>
-            your ideas and contributing to your projects with my work.
+            <span [innerHTML]="'form.text1' | translate"></span>
             <br>
             <br>
-            Need a Frontend developer? <span>Let's talk!</span>
+            <span>{{ 'form.text2' | translate }}</span>
+            <span class="form-green">{{ 'global.letsTalk' | translate }}!</span>
         </p>
     </div>
 
     <div class="form-container">
         <form action="">
             <div class="input-field border-top">
-                <h2 class="font-firacode">What's your name?</h2>
+                <h2 class="font-firacode">{{ 'form.q1' | translate }}</h2>
 
-                <input type="text" placeholder="Your name goes here">
+                <input type="text" [placeholder]="'form.placeHolderText1' | translate">
             </div>
 
             <div class="input-field">
-                <h2 class="font-firacode">What's your email?</h2>
+                <h2 class="font-firacode">{{ 'form.q2' | translate }}</h2>
 
-                <input type="email" placeholder="youremail@email.com">
+                <input type="email" [placeholder]="'form.placeHolderText2' | translate">
             </div>
 
             <div class="input-field">
-                <h2 class="font-firacode">How can I help you?</h2>
+                <h2 class="font-firacode">{{ 'form.q3' | translate }}</h2>
 
-                <textarea name="" id="" placeholder="Hello Lukas, I am interested in..."></textarea>
+                <textarea name="" id="" [placeholder]="'form.placeHolderText3' | translate"></textarea>
             </div>
 
             <p>
@@ -45,15 +40,15 @@
                     <input type="checkbox" name="checkbox" class="checkbox">
                 </label>
                 <span>
-                    I've read the
-                    <a class="font-firacode" href="">privacy policy</a>
-                    and agree to the processing of my data as outlined.
+                    {{ 'form.text3' | translate }}
+                    <a class="font-firacode" href="">{{ 'form.text4' | translate }}</a>
+                    {{ 'form.text5' | translate }}
                 </span>
             </p>
 
             <div class="btn-container">
                 <button class="font-karla">
-                    <span>Say Hello ;)</span>
+                    <span>{{ 'form.btn' | translate }} ;)</span>
                 </button>
             </div>
         </form>

@@ -10,44 +10,44 @@ section {
 }
 
 .contact-container {
-  >h2 {
+  > h2 {
     color: #3dcfb6;
     font-size: 24px;
     font-weight: 500;
   }
 
-  >h1 {
+  > h1 {
     color: #3dcfb6;
     font-size: 64px;
     font-weight: 700;
     padding-bottom: 40px;
   }
 
-  >span {
+  > span {
     color: #3dcfb6;
     font-size: 24px;
     font-weight: 700;
     padding-bottom: 16px;
   }
 
-  >p {
+  > p {
     color: #ffffff;
     font-size: 16px;
     font-weight: 400;
 
-    >span {
+    .form-green {
       color: #3dcfb6;
     }
   }
 }
 
 .form-container {
-  >form {
+  > form {
     .input-field {
       padding: 32px;
       border-bottom: 1px solid #3dcfb680;
 
-      >h2 {
+      > h2 {
         color: #3dcfb6;
         font-size: 24px;
         font-weight: 500;
@@ -69,20 +69,20 @@ section {
       }
     }
 
-    >p {
+    > p {
       @include dFlex($gap: 8px);
       padding: 40px 0;
 
-      >label >input {
+      > label > input {
         cursor: pointer;
       }
 
-      >span {
+      > span {
         color: #ffffff;
         font-size: 15px;
         font-weight: 400;
 
-        >a {
+        > a {
           color: #3dcfb6;
           text-decoration: none;
 
@@ -97,7 +97,7 @@ section {
       @include dFlex();
       overflow: hidden;
 
-      >button {
+      > button {
         background-color: transparent;
         border: 1px solid #ffffff80;
         border-radius: 100px;
@@ -110,7 +110,7 @@ section {
         outline: none;
         position: relative;
 
-        >span {
+        > span {
           display: inline-block;
         }
 

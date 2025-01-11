@@ -1,18 +1,17 @@
 <header class="font-firacode">
     <div>
         <div class="custom-checkbox">
-            <input id="status" type="checkbox" name="status">
+            <input id="status" type="checkbox" name="status" (change)="changeLanguage($event)">
             <label for="status">
-                <div class="status-switch" data-unchecked="EN" data-checked="DE">
-                </div>
+                <div class="status-switch" data-checked="EN" data-unchecked="DE"></div>
             </label>
         </div>
 
-        <a href="">About me</a>
+        <a href="">{{ 'global.aboutMe' | translate }}</a>
 
-        <a href="">Skills</a>
+        <a href="">{{ 'header.skills' | translate }}</a>
 
-        <a href="">Projects</a>
+        <a href="">{{ 'header.projects' | translate }}</a>
     </div>
 
     <div>
@@ -96,9 +95,5 @@
                 </filter>
             </defs>
         </svg>
-
-
-
     </div>
-
 </header>

@@ -1,33 +1,34 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
 })
 export class SliderComponent {
   comments = [
     {
-      commentary: 'Das ist ein toller Kommentar!',
+      commentary: 'commentaries.comment1',
       author: 'Lena Falkenberg',
     },
     {
-      commentary: 'Dieser Kommentar ist noch besser!',
+      commentary: 'commentaries.comment2',
       author: 'Samuel Dorn',
     },
     {
-      commentary: 'Wow, das ist der beste Kommentar!',
+      commentary: 'commentaries.comment3',
       author: 'Amira Lehnert',
     },
     {
-      commentary: 'Angular macht echt Spaß!',
+      commentary: 'commentaries.comment4',
       author: 'Kilian Weiß',
     },
     {
-      commentary: 'Kommentare machen alles lebendiger!',
+      commentary: 'commentaries.comment5',
       author: 'Talia Schröder',
     },
   ];

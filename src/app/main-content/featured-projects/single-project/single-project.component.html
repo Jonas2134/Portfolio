@@ -7,9 +7,9 @@
                 <span class="font-firacode f-size-64">{{ projects[index].projectName }}</span>
             </div>
 
-            <h2 class="green-color">What is this project about?</h2>
+            <h2 class="green-color">{{ 'projects.qu' | translate }}</h2>
 
-            <span>{{ projects[index].projectDescription }}</span>
+            <span>{{ projects[index].projectDescription | translate }}</span>
 
             <div class="skill-list">
                 @for (skill of projects[index].projectSkills; track $index) {
@@ -69,7 +69,7 @@
             <img class="project-image" src="../../../../assets/img/{{ projects[index].projectIMG }}" alt="Project Image">
 
             <div class="next-project">
-                <span>Next project</span>
+                <span>{{ 'projects.btn' | translate }}</span>
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_28959_206" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32"
                         height="32">

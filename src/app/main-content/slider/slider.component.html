@@ -1,5 +1,5 @@
 <section>
-    <h2 class="font-firacode">What my colleagues say about me</h2>
+    <h2 class="font-firacode">{{ 'commentaries.title' | translate }}</h2>
 
     <div class="slider-container">
         <div class="comments">
@@ -8,7 +8,7 @@
                 [class.right]="$index === 2" [class.animate-left]="isAnimatingLeft"
                 [class.animate-right]="isAnimatingRight" class="comment font-karla">
                 <span>
-                    {{ comment.commentary }}
+                    {{ comment.commentary | translate }}
                 </span>
 
                 <div class="author-section">

@@ -1,181 +1,179 @@
-@import '../../shared/mixin.scss';
+@import "../../shared/mixin.scss";
 
 section {
-    height: 100vh;
-    width: 100%;
-    @include dFlex($direction: column);
-    background: linear-gradient(55deg, #1C1C1C 30%, #08463B 90%);
+  height: 100vh;
+  width: 100%;
+  @include dFlex($direction: column);
+  background: linear-gradient(55deg, #1c1c1c 30%, #08463b 90%);
+  overflow: hidden;
+
+  > h2 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #d9d9d9;
+  }
+
+  > h1 {
+    font-size: 128px;
+    font-weight: 700;
+    color: #d9d9d9;
+  }
+
+  > div {
+    @include dFlex($gap: 48px);
     overflow: hidden;
 
-    >h2 {
-        font-size: 40px;
-        font-weight: 400;
-        color: #D9D9D9;
+    > button {
+      border: 1px solid #ffffff;
+      border-radius: 100px;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ffffff;
+      background-color: #292929;
+      padding: 18px 24px;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      position: relative;
+      z-index: 10;
+
+      > span {
+        display: inline-block;
+      }
+
+      &:hover {
+        color: #3dcfb6;
+        border-color: #3dcfb6;
+      }
+
+      &:hover > span {
+        @include scroll-left-animation($duration: 2s);
+      }
     }
-
-    >h1 {
-        font-size: 128px;
-        font-weight: 700;
-        color: #D9D9D9;
-    }
-
-    >div {
-        @include dFlex($gap: 48px);
-        overflow: hidden;
-
-        >button {
-            border: 1px solid #ffffff;
-            border-radius: 100px;
-            font-size: 18px;
-            font-weight: 400;
-            color: #ffffff;
-            background-color: #292929;
-            padding: 18px 24px;
-            cursor: pointer;
-            overflow: hidden;
-            outline: none;
-            position: relative;
-            z-index: 10;
-
-            >span {
-                display: inline-block;
-            }
-
-            &:hover {
-                color: #3DCFB6;
-                border-color: #3DCFB6;
-            }
-
-            &:hover>span {
-                @include scroll-left-animation($duration: 2s);
-            }
-        }
-    }
+  }
 }
 
 /* Navigation Container */
 .navigation-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 
-    >div {
-        @include dFlex($justify: space-between, $align: flex-end);
-        width: 100%;
-        padding: 0 60px;
-    }
+  > div {
+    @include dFlex($justify: space-between, $align: flex-end);
+    width: 100%;
+    padding: 0 60px;
+  }
 }
 
 .container {
-    @include dFlex($justify: start, $gap: 24px, $direction: column);
+  @include dFlex($justify: start, $gap: 24px, $direction: column);
 }
 
 .arrow-button {
-    border: 1px solid #3DCFB6;
-    border-radius: 100px;
-    background-color: transparent;
-    @include dFlex();
-    padding: 15px 10px;
-    cursor: pointer;
+  border: 1px solid #3dcfb6;
+  border-radius: 100px;
+  background-color: transparent;
+  @include dFlex();
+  padding: 15px 10px;
+  cursor: pointer;
 
-    >span {
-        color: #FFFFFF;
-        font-size: 25px;
-        animation: arrow-bounce 1.5s ease-in-out infinite;
-        display: inline-block;
-    }
+  > span {
+    color: #ffffff;
+    font-size: 25px;
+    animation: arrow-bounce 1.5s ease-in-out infinite;
+    display: inline-block;
+  }
 }
 
 @keyframes arrow-bounce {
-    0%,
-    100% {
-        transform: translateY(5px);
-    }
+  0%,
+  100% {
+    transform: translateY(5px);
+  }
 
-    50% {
-        transform: translateY(-5px);
-    }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .link-container {
-    @include dFlex($gap: 16px, $direction: column);
+  @include dFlex($gap: 16px, $direction: column);
 
-    >a {
-
-        .hover-icon {
-            transition: fill 0.3s ease;
-        }
-
-        &:hover {
-
-            .hover-icon path {
-                fill: #FFFFFF;
-            }
-        }
+  > a {
+    .hover-icon {
+      transition: fill 0.3s ease;
     }
+
+    &:hover {
+      .hover-icon path {
+        fill: #ffffff;
+      }
+    }
+  }
 }
 
 .social-link {
-    position: relative;
+  position: relative;
 
-    &::after {
-        content: '';
-        position: absolute;
-        right: -15px;
-        transform: translateY(-50%);
-        top: 50%;
-        width: 8px;
-        height: 8px;
-        background-color: transparent;
-        border-radius: 50%;
-        transition: background-color 0.3s ease-in-out;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+  }
 
-    &:hover::after {
-        background-color: #6AD7BF;
-    }
+  &:hover::after {
+    background-color: #6ad7bf;
+  }
 }
 
 .mail {
-    text-decoration: none;
-    text-align: center;
-    color: #FFFFFF;
-    font-size: 18px;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 
-    &:hover {
-        color: #3DCFB6;
-    }
+  &:hover {
+    color: #3dcfb6;
+  }
 }
 
 .line {
-    width: 1px;
-    background-color: #3DCFB6;
+  width: 1px;
+  background-color: #3dcfb6;
 }
 
 /* Strip */
 .strip {
-    position: absolute;
-    bottom: 5vh;
-    left: 50%;
-    z-index: 5;
-    height: 62px;
-    width: 100%;
-    transform: translateX(-50%) rotate(-3deg);
-    backdrop-filter: blur(5.3px);
-    background-color: #ffffff1f;
-    overflow: hidden;
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  z-index: 5;
+  height: 62px;
+  width: 100%;
+  transform: translateX(-50%) rotate(-3deg);
+  backdrop-filter: blur(5.3px);
+  background-color: #ffffff1f;
+  overflow: hidden;
 
-    >span {
-        width: 100%;
-        font-size: 32px;
-        font-weight: 400;
-        color: #fff;
-        animation: scroll-left 10s linear infinite;
-        @include scroll-left-animation($duration: 10s);
-        overflow: hidden;
-    }
+  > p {
+    width: 100%;
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff;
+    animation: scroll-left 10s linear infinite;
+    @include scroll-left-animation($duration: 10s);
+    overflow: hidden;
+  }
 }

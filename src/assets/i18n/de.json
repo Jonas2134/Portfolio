@@ -1,0 +1,63 @@
+{
+  "header": {
+    "skills": "Fertigkeiten",
+    "projects": "Projekte"
+  },
+  "landingPage": {
+    "title": "Frontend Entwickler",
+    "btn1": "Check meine Projekte"
+  },
+  "aboutMe": {
+    "subtitle": "Wer ich bin",
+    "title": "Über mich",
+    "description": "Hallo, ich bin ein luxemburgisch und deutsch sprechender Frontend-Entwickler aus Luxemburg. Motiviert durch die grenzenlosen Möglichkeiten in der IT, bin ich begeistert davon, visuell fesselnde und intuitive Webseiten und Anwendungen zu entwickeln.",
+    "location": "Ich bin flexibel, was das Arbeitsumfeld angeht, und kann sowohl vor Ort in München als auch aus der Ferne effektiv arbeiten.",
+    "mindset": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um meine Kenntnisse und Fähigkeiten ständig zu verbessern.",
+    "profession": "In meinem Beruf geht es beim Programmieren nicht nur um das Schreiben von Code; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu destillieren. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
+  },
+  "skillSet": {
+    "subtitle": "Technologien",
+    "title": "Fertigkeiten",
+    "description":"Auf meinem Weg habe ich an verschiedenen Projekten gearbeitet und dabei eine Reihe von Frontend-Technologien und Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung vorne zu bleiben.",
+    "q1": "Sie benötigen ",
+    "q2": "eine weitere Fähigkeit?",
+    "a": "Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein bisheriges Wissen zu erweitern."
+  },
+  "projects": {
+    "title": "Ausgewählte Projekte",
+    "text": "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit<br>Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "qu": "Worum geht es bei diesem Projekt?",
+    "joinDescription": "Aufgabenmanager nach dem Vorbild des Kanban-Systems. Erstellen und organisieren Sie Aufgaben mit Hilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+    "sharkieDescription": "Sprung-, Lauf- und Wurfspiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+    "btn": "Nächstes Projekt"
+  },
+  "commentaries": {
+    "title": "Was meine Kollegen über mich sagen",
+    "comment1": "Das ist ein toller Kommentar!",
+    "comment2": "Dieser Kommentar ist noch besser!",
+    "comment3": "Wow, das ist der beste Kommentar!",
+    "comment4": "Angular macht echt Spaß!",
+    "comment5": "Kommentare machen alles lebendiger!"
+  },
+  "form": {
+    "title": "Lasst uns zusammen<br>arbeiten",
+    "subtitle": "Suchen sie eine Lösung zu ihrem Problem?",
+    "text1": "Kontaktieren Sie mich über dieses Formular, ich bin daran interessiert, von Ihnen zu hören,<br>Ihre Ideen zu kennen und mit meiner Arbeit zu Ihren Projekten beizutragen.",
+    "text2": "Brauchen Sie einen Frontend-Entwickler? ",
+    "text3": "Ich habe die",
+    "text4": "Datenschutzbestimmungen",
+    "text5": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "q1": "Wie ist Ihr Name?",
+    "q2": "Wie lautet Ihre E-Mail?",
+    "q3": "Wie kann ich Ihnen helfen?",
+    "placeHolderText1": "Ihr Name steht hier",
+    "placeHolderText2": "deineemail@email.com",
+    "placeHolderText3": "Hallo Jonas, ich bin interessiert an...",
+    "btn": "Sag Hallo"
+  },
+  "global": {
+    "aboutMe": "Über mich",
+    "letsTalk": "Lassen Sie uns reden",
+    "contactMe": "Kontaktieren sie mich"
+  }
+}
