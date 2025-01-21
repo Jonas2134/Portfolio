@@ -6,6 +6,22 @@ section {
   padding: 0 180px 90px 180px;
   color: #3dcfb6;
 
+  @media (max-width: 1100px) {
+    padding: 0 120px 90px 120px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 0 70px 90px 70px;
+  }
+
+  @media (max-width: 850px) {
+    padding: 0 30px 90px 30px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 0 16px 90px 16px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -21,14 +37,22 @@ section {
     pointer-events: none;
   }
 
-  >h2 {
+  > h2 {
     font-size: 24px;
     font-weight: 700;
+
+    @media (max-width: 850px) {
+      font-size: 18px;
+    }
   }
 
-  >div {
+  > div {
     width: 100%;
     @include dFlex($justify: space-around, $align: flex-start, $gap: 80px);
+
+    @media (max-width: 1200px) {
+      @include dFlex($gap: 60px, $direction: column);
+    }
   }
 }
 
@@ -41,35 +65,43 @@ section {
   padding: 32px;
   max-width: 500px;
 
-  >h1 {
-    font-size: 64px;
-    font-weight: 700;
+  @media (max-width: 1200px) {
+    max-width: 100%;
   }
 
-  >div {
+  > h1 {
+    font-size: 64px;
+    font-weight: 700;
+
+    @media (max-width: 850px) {
+      font-size: 56px;
+    }
+  }
+
+  > div {
     font-size: 18px;
     color: #ffffff;
     @include dFlex($align: flex-start, $gap: 32px, $direction: column);
 
-    >span {
+    > span {
       display: block;
     }
 
-    >div {
+    > div {
       @include dFlex($align: flex-start, $gap: 16px, $direction: column);
 
-      >h2 {
+      > h2 {
         font-size: 24px;
         font-weight: 700;
 
-        >span {
+        > span {
           color: #3dcfb6;
         }
       }
     }
   }
 
-  >button {
+  > button {
     border: 1px solid #ffffff;
     border-radius: 100px;
     font-size: 18px;
@@ -83,7 +115,7 @@ section {
     position: relative;
     z-index: 10;
 
-    >span {
+    > span {
       display: inline-block;
     }
 
@@ -93,7 +125,7 @@ section {
     }
 
     &:hover > span {
-        @include scroll-left-animation($duration: 2s);
+      @include scroll-left-animation($duration: 2s);
     }
   }
 }
@@ -104,12 +136,17 @@ section {
   flex-wrap: wrap;
   gap: 40px;
 
-  >div {
+  @media (max-width: 1200px) {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  > div {
     width: 105px;
     height: 120px;
     @include dFlex($justify: flex-start, $gap: 8px, $direction: column);
 
-    >img {
+    > img {
       transition: all 200ms ease-out;
 
       &:hover {
@@ -117,7 +154,7 @@ section {
       }
     }
 
-    >span {
+    > span {
       text-align: center;
       font-size: 18px;
       font-weight: 400;

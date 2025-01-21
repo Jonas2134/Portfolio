@@ -129,3 +129,17 @@ body {
 .font-karla {
   font-family: "Karla" !important;
 }
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #e7e7e7;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #083d33b3;
+}

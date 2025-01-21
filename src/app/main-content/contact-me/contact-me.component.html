@@ -16,28 +16,28 @@
     </div>
 
     <div class="form-container">
-        <form action="">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="input-field border-top">
-                <h2 class="font-firacode">{{ 'form.q1' | translate }}</h2>
+                <label for="name" class="font-firacode">{{ 'form.q1' | translate }}</label>
 
-                <input type="text" [placeholder]="'form.placeHolderText1' | translate">
+                <input [(ngModel)]="contactData.name" id="name" name="name" type="text" [placeholder]="'form.placeHolderText1' | translate" required>
             </div>
 
             <div class="input-field">
-                <h2 class="font-firacode">{{ 'form.q2' | translate }}</h2>
+                <label for="email" class="font-firacode">{{ 'form.q2' | translate }}</label>
 
-                <input type="email" [placeholder]="'form.placeHolderText2' | translate">
+                <input [(ngModel)]="contactData.email" id="email" name="email" type="email" [placeholder]="'form.placeHolderText2' | translate" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
             </div>
 
             <div class="input-field">
-                <h2 class="font-firacode">{{ 'form.q3' | translate }}</h2>
+                <label for="message" class="font-firacode">{{ 'form.q3' | translate }}</label>
 
-                <textarea name="" id="" [placeholder]="'form.placeHolderText3' | translate"></textarea>
+                <textarea [(ngModel)]="contactData.message" name="message" id="message" [placeholder]="'form.placeHolderText3' | translate" required></textarea>
             </div>
 
             <p>
                 <label class="checkboxItem">
-                    <input type="checkbox" name="checkbox" class="checkbox">
+                    <input [(ngModel)]="contactData.checkbox" type="checkbox" id="checkbox" name="checkbox" class="checkbox" required>
                 </label>
                 <span>
                     {{ 'form.text3' | translate }}

@@ -3,6 +3,7 @@
 section {
   @include dFlex($gap: 48px, $direction: column);
   padding: 114px 0;
+  overflow: hidden;
 
   > h2 {
     font-size: 32px;

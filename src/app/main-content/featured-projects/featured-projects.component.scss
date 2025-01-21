@@ -1,30 +1,54 @@
-@import '../../shared/mixin.scss';
+@import "../../shared/mixin.scss";
 
 section {
-    @include dFlex($align: normal, $gap: 20px, $direction: column);
-    padding: 0 96px;
-    color: #FFFFFF;
+  @include dFlex($align: normal, $gap: 20px, $direction: column);
+  padding: 0 96px;
+  color: #ffffff;
 
-    >h2 {
-        font-size: 24px;
-        font-weight: 700;
-        color: #3DCFB6;
-    }
+  @media (max-width: 1000px) {
+    padding: 0 70px;
+  }
 
-    >h1 {
-        padding-bottom: 21px;
-        font-size: 64px;
-        font-weight: 700;
-        color: #3DCFB6;
-    }
+  @media (max-width: 850px) {
+    padding: 0 30px;
+  }
 
-    >span {
-        padding-bottom: 21px;
-        font-size: 18px;
-        font-weight: 400;
+  @media (max-width: 650px) {
+    padding: 0 16px;
+  }
+
+  > h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3dcfb6;
+
+    @media (max-width: 850px) {
+      font-size: 18px;
     }
+  }
+
+  > h1 {
+    padding-bottom: 21px;
+    font-size: 64px;
+    font-weight: 700;
+    color: #3dcfb6;
+
+    @media (max-width: 850px) {
+      font-size: 56px;
+    }
+  }
+
+  > span {
+    padding-bottom: 21px;
+    font-size: 18px;
+    font-weight: 400;
+
+    @media (max-width: 850px) {
+      font-size: 16px;
+    }
+  }
 }
 
 .poject-list {
-    max-width: 800px;
+  max-width: 800px;
 }

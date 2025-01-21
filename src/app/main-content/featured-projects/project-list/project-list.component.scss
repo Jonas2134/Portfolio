@@ -13,6 +13,10 @@ section {
     border-bottom: 1px solid #3dcfb6;
     transition: background-color 0.2s ease;
 
+    @media (max-width: 1300px) {
+      width: 100%;
+    }
+
     .project-name {
       @include dFlex($gap: 3px);
 
@@ -49,6 +53,10 @@ section {
   position: absolute;
   right: 0;
   opacity: 0;
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
 
   >img {
     position: relative;

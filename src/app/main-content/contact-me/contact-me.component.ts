@@ -1,14 +1,28 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe, FormsModule],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
+  contactData = {
+    name: "",
+    email: "",
+    message: "",
+    checkbox: false
+  }
+  
+  constructor() {}
 
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.valid && ngForm.submitted) {
+      console.log();
+    }
+  }
 }

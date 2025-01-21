@@ -1,0 +1,96 @@
+@import "../../mixin.scss";
+
+div {
+  @include dFlex($gap: 24px);
+
+  .link-container {
+    @include dFlex($gap: 24px);
+
+    > a {
+      position: relative;
+      text-decoration: none;
+      color: #ffff;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      &:hover::after {
+        background-color: #6ad7bf;
+      }
+    }
+  }
+}
+
+.custom-checkbox {
+  width: 84px;
+  height: 28px;
+
+  input#status {
+    display: none;
+
+    + label {
+      height: 100%;
+      width: 100%;
+
+      > .status-switch {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        color: #ffff;
+        transition: all 0.5s ease;
+        border: 2px solid #ffff;
+        border-radius: 100px;
+
+        &:before,
+        &:after {
+          border-radius: 100px;
+          height: 100%;
+          width: 50%;
+          padding: 2px;
+          position: absolute;
+          top: -2px;
+          @include dFlex();
+          transition: all 0.3s ease;
+        }
+
+        &:before {
+          content: attr(data-checked);
+          background-color: #3dcfb6;
+          left: -2px;
+          box-shadow: 0 0 4px 4px rgba(#000, 0.2);
+          z-index: 10;
+        }
+
+        &:after {
+          content: attr(data-unchecked);
+          color: #3dcfb6;
+          right: 0;
+        }
+      }
+    }
+
+    &:checked + label > .status-switch {
+      &:after {
+        content: attr(data-checked);
+        color: #3dcfb6;
+        left: 0;
+      }
+
+      &:before {
+        content: attr(data-unchecked);
+        left: 50%;
+      }
+    }
+  }
+}

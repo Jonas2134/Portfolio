@@ -1,0 +1,16 @@
+<div>
+    <div class="custom-checkbox">
+        <input id="status" type="checkbox" name="status" (change)="changeLanguage($event)">
+        <label for="status">
+            <div class="status-switch" data-checked="EN" data-unchecked="DE"></div>
+        </label>
+    </div>
+    
+    <div class="link-container">
+        <a href="">{{ 'global.aboutMe' | translate }}</a>
+    
+        <a href="">{{ 'header.skills' | translate }}</a>
+    
+        <a href="">{{ 'header.projects' | translate }}</a>
+    </div>
+</div>
