@@ -11,17 +11,40 @@ section {
     font-size: 40px;
     font-weight: 400;
     color: #d9d9d9;
+    text-align: center;
+
+    @media (max-width: 650px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 18px;
+    }
   }
 
   > h1 {
     font-size: 128px;
     font-weight: 700;
     color: #d9d9d9;
+    text-align: center;
+
+    @media (max-width: 650px) {
+      font-size: 82px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 42px;
+    }
   }
 
-  > div {
+  .btn-container {
     @include dFlex($gap: 48px);
+    padding-top: 24px;
     overflow: hidden;
+
+    @media (max-width: 550px) {
+      @include dFlex($gap: 24px);
+    }
 
     > button {
       border: 1px solid #ffffff;
@@ -36,6 +59,11 @@ section {
       outline: none;
       position: relative;
       z-index: 10;
+
+      @media (max-width: 550px) {
+        font-size: 16px;
+        padding: 16px 18px;
+      }
 
       > span {
         display: inline-block;
@@ -54,21 +82,9 @@ section {
 }
 
 /* Navigation Container */
-.navigation-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-
-  > div {
-    @include dFlex($justify: space-between, $align: flex-end);
-    width: 100%;
-    padding: 0 60px;
-  }
-}
-
 .container {
+  position: absolute;
+  bottom: 0;
   @include dFlex($justify: start, $gap: 24px, $direction: column);
 }
 
@@ -154,8 +170,25 @@ section {
   background-color: #3dcfb6;
 }
 
+.left {
+  left: 60px;
+
+  @media (max-width: 650px) {
+    left: 10px;
+  }
+}
+
+.right {
+  right: 60px;
+
+  @media (max-width: 650px) {
+    right: 10px;
+  }
+}
+
 /* Strip */
 .strip {
+  @include dFlex();
   position: absolute;
   bottom: 5vh;
   left: 50%;
@@ -172,7 +205,6 @@ section {
     font-size: 32px;
     font-weight: 400;
     color: #fff;
-    animation: scroll-left 10s linear infinite;
     @include scroll-left-animation($duration: 10s);
     overflow: hidden;
   }

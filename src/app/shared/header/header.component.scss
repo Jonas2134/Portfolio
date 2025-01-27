@@ -9,4 +9,24 @@ header {
     rgba(0, 0, 0, 0) 15%,
     rgba(0, 0, 0, 0.6) 80%
   );
+
+  @media (max-width: 1000px) {
+    padding: 32px 32px;
+  }
+
+  @media (max-width: 550px) {
+    padding: 32px 16px;
+  }
+}
+
+.burger-menu {
+  position: absolute;
+  right: 25px;
+  top: 100px;
+  z-index: 20;
+
+  @media (max-width: 550px) {
+    top: 90px;
+    right: 16px;
+  }
 }

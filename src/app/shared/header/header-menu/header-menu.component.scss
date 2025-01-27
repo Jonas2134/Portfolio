@@ -1,10 +1,22 @@
 @import "../../mixin.scss";
 
-div {
+.menu {
   @include dFlex($gap: 24px);
+
+  @media (max-width: 1000px) {
+    @include dFlex($gap: 24px, $direction: column-reverse);
+    padding: 60px 40px;
+    border: 1px solid #3DCFB6;
+    border-radius: 30px;
+    background-color: #08463B;
+  }
 
   .link-container {
     @include dFlex($gap: 24px);
+
+    @media (max-width: 1000px) {
+      @include dFlex($gap: 24px, $direction: column);
+    }
 
     > a {
       position: relative;
@@ -68,7 +80,6 @@ div {
           content: attr(data-checked);
           background-color: #3dcfb6;
           left: -2px;
-          box-shadow: 0 0 4px 4px rgba(#000, 0.2);
           z-index: 10;
         }
 

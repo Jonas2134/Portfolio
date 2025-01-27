@@ -3,6 +3,7 @@ import { FullLogoComponent } from './full-logo/full-logo.component';
 import { MinimumLogoComponent } from './minimum-logo/minimum-logo.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { CommonModule } from '@angular/common';
+import { NgClickOutsideDirective } from 'ng-click-outside2';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
     FullLogoComponent,
     MinimumLogoComponent,
     HeaderMenuComponent,
+    NgClickOutsideDirective
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
@@ -26,19 +28,14 @@ export class HeaderComponent {
   }
 
   private getScreenSize(): 'small' | 'large' {
-    return window.innerWidth < 1000 ? 'small' : 'large';
+    return window.innerWidth <= 1000 ? 'small' : 'large';
   }
 
-  openMenu() {
-    this.isVisible = true;
-    console.log('open');    
+  toggleMenu() {
+    this.isVisible = !this.isVisible;
   }
 
-  closeMenu() {
-    if (this.isVisible === true) {
-      this.isVisible = false;
-      console.log('close in if');
-    }
-    console.log('close out if');
+  onClickedOutside(event: Event) {
+    if (this.isVisible) this.isVisible = false;
   }
 }
