@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-full-logo',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './full-logo.component.scss'
 })
 export class FullLogoComponent {
-
+  @Input() width!: number;
+  @Input() height!: number;
 }

@@ -1,50 +1,76 @@
-@import '../mixin.scss';
+@import "../mixin.scss";
 
 footer {
-    @include dFlex($justify: space-around);
-    padding: 64px 0;
+  @include dFlex($justify: space-around);
+  padding: 64px 16px;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 650px) {
+    position: relative;
+    @include dFlex($justify: space-between);
+    padding: 84px 16px;
+  }
 }
 
-.developer-section {
-    @include dFlex($align: start, $gap: 10px, $direction: column);
+.developer-container {
+  @include dFlex($align: start, $gap: 10px, $direction: column);
 
-    >span {
-        color: #FFFFFF;
+  > span {
+    color: #ffffff;
+    font-size: 16px;
+  }
+}
+
+.copyright-container {
+  @media (max-width: 650px) {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  > span {
+    color: #3dcfb6;
+    font-size: 18px;
+    width: 100%;
+    white-space: nowrap;
+
+    @media (max-width: 450px) {
+      font-size: 16px;
     }
+  }
 }
 
-.copyright-section {
-    color: #3DCFB6;
-}
+.link-container {
+  @include dFlex($align: start, $gap: 10px, $direction: column);
 
-.link-section {
-    @include dFlex($align: start, $gap: 10px, $direction: column);
+  > a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
 
-    >a {
-        position: relative;
-        text-decoration: none;
-        color: #FFFFFF;
-        transition: color 0.3s ease-in-out;
-
-        &:hover {
-            color: #3DCFB6;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            left: -15px;
-            transform: translateY(-50%);
-            top: 50%;
-            width: 8px;
-            height: 8px;
-            background-color: transparent;
-            border-radius: 50%;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        &:hover::after {
-            background-color: #6AD7BF;
-        }
+    &:hover {
+      color: #3dcfb6;
     }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -15px;
+      transform: translateY(-50%);
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      background-color: #6ad7bf;
+    }
+  }
 }

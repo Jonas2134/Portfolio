@@ -4,6 +4,7 @@ header {
   @include dFlex($justify: space-between);
   font-size: 20px;
   padding: 40px 96px;
+  overflow: hidden;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0) 15%,

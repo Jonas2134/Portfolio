@@ -4,6 +4,7 @@ section {
   @include dFlex($align: normal, $gap: 20px, $direction: column);
   padding: 0 96px;
   color: #ffffff;
+  overflow: hidden;
 
   @media (max-width: 1000px) {
     padding: 0 70px;

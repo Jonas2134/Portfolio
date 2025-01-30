@@ -17,10 +17,19 @@ section {
       width: 100%;
     }
 
+    @media (max-width: 650px) {
+      padding: 40px 18px;
+    }
+
+    @media (max-width: 450px) {
+      @include dFlex($align: flex-start, $gap: 10px, $direction: column);
+      padding: 40px 0;
+    }
+
     .project-name {
       @include dFlex($gap: 3px);
 
-      >h3 {
+      > h3 {
         font-size: 24px;
         font-weight: 700;
       }
@@ -33,6 +42,11 @@ section {
 
     .project-skills {
       @include dFlex($gap: 4px);
+
+      > span {
+        font-size: 18px;
+        font-weight: 400;
+      }
     }
 
     &:hover {
@@ -42,7 +56,7 @@ section {
         opacity: 1;
       }
 
-      ~.image-container {
+      ~ .image-container {
         opacity: 1;
       }
     }
@@ -58,7 +72,7 @@ section {
     display: none;
   }
 
-  >img {
+  > img {
     position: relative;
     z-index: 5;
   }
@@ -70,7 +84,13 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(135deg, transparent, transparent 10px, #3dcfb6 10px, #3dcfb6 11px);
+    background: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 10px,
+      #3dcfb6 10px,
+      #3dcfb6 11px
+    );
     border-radius: 30px;
     z-index: 1;
     transform: translate(15px, 15px);

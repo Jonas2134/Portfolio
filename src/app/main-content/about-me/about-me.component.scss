@@ -3,6 +3,7 @@
 section {
   @include dFlex($justify: space-evenly, $gap: 90px, $align: flex-start);
   padding: 112px;
+  overflow: hidden;
 
   @media (max-width: 1200px) {
     @include dFlex($gap: 90px, $direction: column);

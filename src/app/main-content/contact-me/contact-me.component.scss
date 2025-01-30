@@ -3,6 +3,7 @@
 section {
   @include dFlex($justify: space-evenly, $align: flex-start, $gap: 120px);
   padding: 0 96px;
+  overflow: hidden;
 
   @media (max-width: 1500px) {
     @include dFlex($justify: space-evenly, $align: flex-start, $gap: 80px);
@@ -14,6 +15,18 @@ section {
 
   @media (max-width: 1200px) {
     @include dFlex($gap: 64px, $direction: column);
+  }
+
+  @media (max-width: 1000px) {
+    padding: 0 70px;
+  }
+
+  @media (max-width: 850px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 0 16px;
   }
 
   div {

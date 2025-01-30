@@ -1,9 +1,10 @@
-import { Component, HostListener } from '@angular/core';
-import { FullLogoComponent } from './full-logo/full-logo.component';
-import { MinimumLogoComponent } from './minimum-logo/minimum-logo.component';
+import { Component, OnInit } from '@angular/core';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { CommonModule } from '@angular/common';
 import { NgClickOutsideDirective } from 'ng-click-outside2';
+import { FullLogoComponent } from '../full-logo/full-logo.component';
+import { MinimumLogoComponent } from '../minimum-logo/minimum-logo.component';
+import { ScreenSizeService } from '../../service/screen-size.service';
 
 @Component({
   selector: 'app-header',
@@ -18,17 +19,16 @@ import { NgClickOutsideDirective } from 'ng-click-outside2';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
-  screenSize: 'small' | 'large' = this.getScreenSize();
+export class HeaderComponent implements OnInit {
   isVisible: boolean = false;
+  screenSize!: 'small' | 'large';
 
-  @HostListener('window:resize', [])
-  onResize() {
-    this.screenSize = this.getScreenSize();
-  }
+  constructor(private screenSizeService: ScreenSizeService) {}
 
-  private getScreenSize(): 'small' | 'large' {
-    return window.innerWidth <= 1000 ? 'small' : 'large';
+  ngOnInit(): void {
+    this.screenSizeService.screenSize$.subscribe((size) => {
+      this.screenSize = size;      
+    });
   }
 
   toggleMenu() {
