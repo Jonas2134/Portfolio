@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-slider',
@@ -8,6 +15,18 @@ import { TranslatePipe } from '@ngx-translate/core';
   imports: [CommonModule, TranslatePipe],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
+  animations: [
+    trigger('slide', [
+      transition(':increment', [
+        style({ transform: 'translateX(100%)' }),
+        animate('200ms ease-in-out', style({ transform: 'translateX(0)' })),
+      ]),
+      transition(':decrement', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('200ms ease-in-out', style({ transform: 'translateX(0)' })),
+      ]),
+    ]),
+  ],
 })
 export class SliderComponent {
   comments = [
@@ -34,11 +53,11 @@ export class SliderComponent {
   ];
 
   currentIndex: number = 0;
-  isAnimatingLeft = false;
-  isAnimatingRight = false;
+  direction: 'left' | 'right' = 'right';
 
   get visibleComments() {
-    const prevIndex = (this.currentIndex - 1 + this.comments.length) % this.comments.length;
+    const prevIndex =
+      (this.currentIndex - 1 + this.comments.length) % this.comments.length;
     const nextIndex = (this.currentIndex + 1) % this.comments.length;
     return [
       this.comments[prevIndex],
@@ -48,23 +67,14 @@ export class SliderComponent {
   }
 
   nextComment(): void {
-    this.isAnimatingLeft = true;
+    this.direction = 'right';
     this.currentIndex = (this.currentIndex + 1) % this.comments.length;
-    setTimeout(() => {
-      this.isAnimatingLeft = false;
-    }, 500);
   }
 
   prevComment(): void {
-    this.isAnimatingRight = true;
-    this.currentIndex = (this.currentIndex - 1 + this.comments.length) % this.comments.length;
-    setTimeout(() => {
-      this.isAnimatingRight = false;
-    }, 500);
-  }
-
-  isHighlighted(index: number): boolean {
-    return this.currentIndex === index;
+    this.direction = 'left';
+    this.currentIndex =
+      (this.currentIndex - 1 + this.comments.length) % this.comments.length;
   }
 
   isPointHighlighted(index: number): boolean {

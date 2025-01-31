@@ -5,8 +5,8 @@
         <div class="comments">
             @for (comment of visibleComments; track $index) {
             <div [class.center]="$index === 1" [class.left]="$index === 0"
-                [class.right]="$index === 2" [class.animate-left]="isAnimatingLeft"
-                [class.animate-right]="isAnimatingRight" class="comment font-karla">
+                [class.right]="$index === 2" class="comment font-karla"
+                [@slide]="{value: currentIndex, params: { direction: direction }}">
                 <span>
                     {{ comment.commentary | translate }}
                 </span>
