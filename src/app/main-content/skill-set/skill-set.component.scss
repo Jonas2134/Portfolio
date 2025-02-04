@@ -69,12 +69,21 @@ section {
     max-width: 100%;
   }
 
+  @media (max-width: 400px) {
+    padding: 18px;
+  }
+
   > h1 {
     font-size: 64px;
     font-weight: 700;
+    text-align: center;
 
     @media (max-width: 850px) {
       font-size: 56px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 42px;
     }
   }
 

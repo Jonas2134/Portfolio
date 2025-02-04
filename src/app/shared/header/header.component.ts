@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
     this.isVisible = !this.isVisible;
   }
 
+  closeMenu() {
+    this.isVisible = false;
+  }
+
   onClickedOutside(event: Event) {
     if (this.isVisible) this.isVisible = false;
   }

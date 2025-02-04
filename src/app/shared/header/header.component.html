@@ -12,7 +12,7 @@
         </svg>
     </div>
     @if (isVisible) {
-    <app-header-menu class="burger-menu"></app-header-menu>
+    <app-header-menu [isVisible]="isVisible" (close)="closeMenu()" class="burger-menu"></app-header-menu>
     }
     }
     @default {

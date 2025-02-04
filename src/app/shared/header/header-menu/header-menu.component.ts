@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -10,8 +10,15 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   styleUrl: './header-menu.component.scss'
 })
 export class HeaderMenuComponent {
+  @Input() isVisible: boolean = false;
+
+  @Output() close = new EventEmitter<void>();
 
   constructor(private translate: TranslateService) {}
+
+  closeMenu() {
+    this.close.emit();
+  }
 
   changeLanguage(event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;

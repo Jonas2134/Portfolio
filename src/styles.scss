@@ -118,8 +118,10 @@
 body {
   background-color: #1c1c1c;
   scroll-behavior: smooth;
-  overflow-y: scroll;
-  overflow-x: hidden;
+}
+
+.approot {
+  position: relative;
 }
 
 .font-firacode {

@@ -2,6 +2,7 @@
 
 header {
   @include dFlex($justify: space-between);
+  position: relative;
   font-size: 20px;
   padding: 40px 96px;
   overflow: hidden;
@@ -21,13 +22,13 @@ header {
 }
 
 .burger-menu {
-  position: absolute;
+  position: fixed;
   right: 25px;
-  top: 100px;
-  z-index: 20;
+  left: 25px;
+  top: 0;
 
   @media (max-width: 550px) {
-    top: 90px;
+    left: 16px;
     right: 16px;
   }
 }
