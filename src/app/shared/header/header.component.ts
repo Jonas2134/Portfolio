@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { CommonModule } from '@angular/common';
 import { NgClickOutsideDirective } from 'ng-click-outside2';
@@ -19,17 +19,13 @@ import { ScreenSizeService } from '../../service/screen-size.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  private ScreenSizeService = inject(ScreenSizeService);
+  
   isVisible: boolean = false;
-  screenSize!: 'small' | 'large';
+  screenSize = this.ScreenSizeService.screenSize;
 
-  constructor(private screenSizeService: ScreenSizeService) {}
-
-  ngOnInit(): void {
-    this.screenSizeService.screenSize$.subscribe((size) => {
-      this.screenSize = size;      
-    });
-  }
+  constructor() {}
 
   toggleMenu() {
     this.isVisible = !this.isVisible;

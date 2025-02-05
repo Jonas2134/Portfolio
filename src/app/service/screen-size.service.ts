@@ -1,29 +1,26 @@
-import { Injectable, NgZone } from '@angular/core';
-import { BehaviorSubject, fromEvent } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
+import { computed, effect, Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ScreenSizeService {
-  private screenSizeSubject = new BehaviorSubject<'small' | 'large'>(
-    this.getScreenSize()
-  );
-  screenSize$ = this.screenSizeSubject.asObservable();
+  private windowWidth = signal(window.innerWidth);
+  public screenSize = computed(() => {
+    const width = this.windowWidth();
+    if (width < 650) {
+      return 'small';
+    } else if (width < 1000) {
+      return 'medium';
+    } else {
+      return 'large';
+    }
+  });
 
-  constructor(private ngZone: NgZone) {
-    this.ngZone.runOutsideAngular(() => {
-      fromEvent(window, 'resize')
-        .pipe(throttleTime(500))
-        .subscribe(() => {
-          this.ngZone.run(() => {
-            this.screenSizeSubject.next(this.getScreenSize());
-          });
-        });
+  constructor() {
+    effect((onCleanup) => {
+      const listener = () => this.windowWidth.set(window.innerWidth);
+      window.addEventListener('resize', listener);
+      onCleanup(() => window.removeEventListener('resize', listener));
     });
-  }
-
-  private getScreenSize(): 'small' | 'large' {
-    return window.innerWidth <= 1000 ? 'small' : 'large';
   }
 }

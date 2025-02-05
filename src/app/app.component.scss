@@ -4,9 +4,9 @@
   left: 0;
   width: 100%;
   z-index: 20;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 
   &.hidden {
-    transform: translateY(-100%);
+    transform: translateY(-300%);
   }
 }

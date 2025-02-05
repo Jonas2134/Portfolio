@@ -1,28 +1,39 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { LangChangeEvent, TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header-menu',
   standalone: true,
   imports: [CommonModule, TranslatePipe],
   templateUrl: './header-menu.component.html',
-  styleUrl: './header-menu.component.scss'
+  styleUrl: './header-menu.component.scss',
 })
-export class HeaderMenuComponent {
+export class HeaderMenuComponent implements OnInit{
   @Input() isVisible: boolean = false;
-
   @Output() close = new EventEmitter<void>();
 
-  constructor(private translate: TranslateService) {}
+  isEnglish!: boolean;
+
+  constructor(public translate: TranslateService) {}
+
+  ngOnInit() {
+    this.isEnglish = this.translate.currentLang === 'en';
+
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.isEnglish = event.lang === 'en';
+    });
+  }
 
   closeMenu() {
     this.close.emit();
   }
 
   changeLanguage(event: Event): void {
-    const isChecked = (event.target as HTMLInputElement).checked;
-    const newLanguage = isChecked ? 'de' : 'en';
-    this.translate.use(newLanguage);
+    const target = event.target as HTMLInputElement;
+    const newLang = target.checked ? 'en' : 'de';
+
+    this.translate.use(newLang);
+    this.isEnglish = newLang === 'en';
   }
 }

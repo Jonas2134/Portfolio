@@ -1,12 +1,12 @@
 <footer class="font-karla">
     <div class="developer-container">
         <div>
-            @switch (screenSize) {
-            @case ('small') {
-            <app-minimum-logo [width]="68" [height]="48"></app-minimum-logo>
+            @switch (screenSize()) {
+            @case ('large') {
+            <app-full-logo [width]="132.14" [height]="48"></app-full-logo>
             }
             @default {
-            <app-full-logo [width]="132.14" [height]="48"></app-full-logo>
+            <app-minimum-logo [width]="68" [height]="48"></app-minimum-logo>
             }
 
             }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FullLogoComponent } from '../full-logo/full-logo.component';
 import { MinimumLogoComponent } from '../minimum-logo/minimum-logo.component';
 import { ScreenSizeService } from '../../service/screen-size.service';
@@ -11,13 +11,9 @@ import { ScreenSizeService } from '../../service/screen-size.service';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  screenSize!: 'small' | 'large';
+  private ScreenSizeService = inject(ScreenSizeService);
 
-  constructor(private screenSizeService: ScreenSizeService) {}
+  screenSize = this.ScreenSizeService.screenSize;
 
-  ngOnInit(): void {
-    this.screenSizeService.screenSize$.subscribe((size) => {
-      this.screenSize = size;
-    });
-  }
+  constructor() {}
 }
