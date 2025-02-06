@@ -118,6 +118,7 @@ section {
         > a {
           color: #3dcfb6;
           text-decoration: none;
+          transition: color 0.2s ease;
 
           &:hover {
             color: #ffffff;
@@ -142,6 +143,7 @@ section {
         overflow: hidden;
         outline: none;
         position: relative;
+        transition: all 0.2s ease;
 
         > span {
           display: inline-block;
@@ -185,6 +187,7 @@ section {
     border-radius: 2px;
     background-color: transparent;
     cursor: pointer;
+    transition: all 0.2s ease;
 
     &:checked::after {
       content: "";

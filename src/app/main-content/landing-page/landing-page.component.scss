@@ -63,6 +63,7 @@ section {
       outline: none;
       position: relative;
       z-index: 10;
+      transition: all 0.2s ease;
 
       @media (max-width: 550px) {
         font-size: 16px;
@@ -137,6 +138,7 @@ section {
 
 .social-link {
   position: relative;
+  transition: scale 0.2s ease;
 
   &::after {
     content: "";
@@ -151,8 +153,12 @@ section {
     transition: background-color 0.3s ease-in-out;
   }
 
-  &:hover::after {
-    background-color: #6ad7bf;
+  &:hover {
+    scale: 1.1;
+
+    &::after {
+      background-color: #6ad7bf;
+    }
   }
 }
 
@@ -163,9 +169,11 @@ section {
   font-size: 18px;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+  transition: all 0.3s ease;
 
   &:hover {
     color: #3dcfb6;
+    scale: 1.1;
   }
 }
 

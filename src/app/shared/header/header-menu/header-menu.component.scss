@@ -29,6 +29,7 @@
       position: relative;
       text-decoration: none;
       color: #ffff;
+      transition: scale 0.2s ease;
 
       &::after {
         content: "";
@@ -40,12 +41,30 @@
         height: 8px;
         background-color: transparent;
         border-radius: 50%;
-        transition: background-color 0.2s ease-in-out;
+        transition: background-color 0.2s ease;
       }
 
-      &:hover::after {
-        background-color: #6ad7bf;
+      &:hover {
+        scale: 1.1;
+        
+        &::after {
+          background-color: #6ad7bf;
+        }
       }
+      
+    }
+  }
+}
+
+.close-icon {
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    scale: 1.1;
+
+    path {
+      fill: #3dcfb6;
     }
   }
 }
@@ -68,22 +87,25 @@
         width: 100%;
         height: 100%;
         position: relative;
-        /* transition: all 0.5s ease; */
+        transition: all 0.5s ease;
         border: 2px solid #ffff;
         border-radius: 100px;
         background: transparent;
         overflow: hidden;
 
+        &:hover {
+          border: 2px solid #3dcfb6;
+          scale: 1.1;
+        }
+
         &:before,
         &:after {
-          content: "";
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
           height: calc(100% - 4px);
           width: 50%;
           @include dFlex();
-          color: #ffff;
           z-index: 2;
         }
 

@@ -123,6 +123,7 @@ section {
     outline: none;
     position: relative;
     z-index: 10;
+    transition: all 0.2s ease;
 
     > span {
       display: inline-block;
