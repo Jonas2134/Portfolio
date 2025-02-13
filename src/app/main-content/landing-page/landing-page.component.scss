@@ -3,85 +3,94 @@
 section {
   height: 100vh;
   position: relative;
-  @include dFlex($direction: column);
   background: linear-gradient(55deg, #1c1c1c 30%, #08463b 90%);
   overflow: hidden;
+  
+  >main {
+    max-width: 1600px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include dFlex($direction: column);
+    position: relative;
 
-  > h2 {
-    font-size: 40px;
+    > h2 {
+      font-size: 40px;
+      font-weight: 400;
+      color: #d9d9d9;
+      text-align: center;
+  
+      @media (max-width: 650px) {
+        font-size: 28px;
+      }
+  
+      @media (max-width: 450px) {
+        font-size: 18px;
+      }
+    }
+  
+    > h1 {
+      font-size: 128px;
+      font-weight: 700;
+      color: #d9d9d9;
+      text-align: center;
+  
+      @media (max-width: 650px) {
+        font-size: 82px;
+      }
+  
+      @media (max-width: 450px) {
+        font-size: 42px;
+      }
+    }
+  }
+}
+
+.btn-container {
+  @include dFlex($gap: 48px);
+  padding-top: 24px;
+  overflow: hidden;
+
+  @media (max-width: 550px) {
+    @include dFlex($gap: 24px);
+  }
+
+  @media (max-width: 450px) {
+    @include dFlex($gap: 24px, $direction: column);
+  }
+
+  > button {
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    font-size: 18px;
     font-weight: 400;
-    color: #d9d9d9;
-    text-align: center;
-
-    @media (max-width: 650px) {
-      font-size: 28px;
-    }
-
-    @media (max-width: 450px) {
-      font-size: 18px;
-    }
-  }
-
-  > h1 {
-    font-size: 128px;
-    font-weight: 700;
-    color: #d9d9d9;
-    text-align: center;
-
-    @media (max-width: 650px) {
-      font-size: 82px;
-    }
-
-    @media (max-width: 450px) {
-      font-size: 42px;
-    }
-  }
-
-  .btn-container {
-    @include dFlex($gap: 48px);
-    padding-top: 24px;
+    color: #ffffff;
+    background-color: #292929;
+    padding: 18px 24px;
+    cursor: pointer;
     overflow: hidden;
+    outline: none;
+    position: relative;
+    z-index: 10;
+    transition: all 0.2s ease;
 
     @media (max-width: 550px) {
-      @include dFlex($gap: 24px);
+      font-size: 16px;
+      padding: 16px 18px;
     }
 
-    @media (max-width: 450px) {
-      @include dFlex($gap: 24px, $direction: column);
+    > span {
+      display: inline-block;
     }
 
-    > button {
-      border: 1px solid #ffffff;
-      border-radius: 100px;
-      font-size: 18px;
-      font-weight: 400;
-      color: #ffffff;
-      background-color: #292929;
-      padding: 18px 24px;
-      cursor: pointer;
-      overflow: hidden;
-      outline: none;
-      position: relative;
-      z-index: 10;
-      transition: all 0.2s ease;
+    &:hover {
+      color: #3dcfb6;
+      border-color: #3dcfb6;
+    }
 
-      @media (max-width: 550px) {
-        font-size: 16px;
-        padding: 16px 18px;
-      }
-
-      > span {
-        display: inline-block;
-      }
-
-      &:hover {
-        color: #3dcfb6;
-        border-color: #3dcfb6;
-      }
-
-      &:hover > span {
-        @include scroll-left-animation($duration: 2s);
-      }
+    &:hover > span {
+      @include scroll-left-animation($duration: 2s);
     }
   }
 }
@@ -183,18 +192,34 @@ section {
 }
 
 .left {
-  left: 60px;
+  left: 20%;
+
+  @media (max-width: 2000px) {
+    left: 15%;
+  }
+
+  @media (max-width: 1500px) {
+    left: 10%;
+  }
 
   @media (max-width: 650px) {
-    left: 10px;
+    left: 15px;
   }
 }
 
 .right {
-  right: 60px;
+  right: 20%;
+
+  @media (max-width: 2000px) {
+    right: 15%;
+  }
+
+  @media (max-width: 1500px) {
+    right: 10%;
+  }
 
   @media (max-width: 650px) {
-    right: 10px;
+    right: 15px;
   }
 }
 

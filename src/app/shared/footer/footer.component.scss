@@ -1,15 +1,18 @@
 @import "../mixin.scss";
 
 footer {
-  @include dFlex($justify: space-around);
-  padding: 64px 16px;
+  @include dFlex($justify: space-between);
+  max-width: 1600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 64px 62px;
   overflow: hidden;
   position: relative;
 
   @media (max-width: 650px) {
     position: relative;
-    @include dFlex($justify: space-between);
-    padding: 84px 16px;
+    padding: 84px 24px;
   }
 }
 
@@ -43,7 +46,7 @@ footer {
 }
 
 .link-container {
-  @include dFlex($align: start, $gap: 10px, $direction: column);
+  @include dFlex($align: flex-end, $gap: 10px, $direction: column);
 
   > a {
     position: relative;

@@ -1,7 +1,7 @@
 <section>
-    <h2 class="font-karla">{{ 'skillSet.subtitle' | translate }}</h2>
+    <div class="skills">
+        <h2 class="font-karla">{{ 'skillSet.subtitle' | translate }}</h2>
 
-    <div>
         <div class="skill-set-container font-karla">
             <h1 class="font-firacode">{{ 'skillSet.title' | translate }}</h1>
 
@@ -9,7 +9,8 @@
                 <span>{{ 'skillSet.description' | translate }}</span>
 
                 <div>
-                    <h2 class="font-firacode">{{ 'skillSet.q1' | translate }}<span>{{ 'skillSet.q2' | translate }}</span></h2>
+                    <h2 class="font-firacode">{{ 'skillSet.q1' | translate }}<span>{{ 'skillSet.q2' | translate
+                            }}</span></h2>
 
                     <span>{{ 'skillSet.a' | translate }}</span>
                 </div>
@@ -19,14 +20,14 @@
                 <span>{{ 'global.letsTalk' | translate }}</span>
             </button>
         </div>
+    </div>
 
-        <div class="font-firacode skill-container">
-            @for (skill of skills; track skill.name) {
-            <div>
-                <img src="../../../assets/img/{{ skill.img }}">
-                <span>{{ skill.name }}</span>
-            </div>
-            }
+    <div class="font-firacode skill-container">
+        @for (skill of skills; track skill.name) {
+        <div>
+            <img src="assets/img/{{ skill.img }}">
+            <span>{{ skill.name }}</span>
         </div>
+        }
     </div>
 </section>

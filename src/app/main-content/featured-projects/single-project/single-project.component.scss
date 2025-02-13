@@ -17,14 +17,15 @@ section {
     background: linear-gradient(55deg, #1c1c1c 30%, #08463b 90%);
     border-radius: 30px;
     border: 1px solid #3dcfb6;
+    position: relative;
 
     @media (max-width: 1500px) {
       width: 80vw;
-      @include dFlex($gap: 50px);
+      gap: 50px;
     }
 
     @media (max-width: 1300px) {
-      @include dFlex($gap: 20px);
+      gap: 20px;
     }
 
     @media (max-width: 1200px) {
@@ -32,14 +33,16 @@ section {
     }
 
     @media (max-width: 1000px) {
-      position: relative;
-      @include dFlex($gap: 50px, $direction: column-reverse);
+      gap: 0;
+      padding: 75px 58px;
     }
 
     @media (max-width: 850px) {
-      width: 95vw;
-      padding: 80px 12px;
-      @include dFlex($gap: 40px, $direction: column-reverse);
+      padding: 60px 32px 80px 32px;
+    }
+
+    @media (max-width: 400px) {
+      padding: 60px 12px 80px 12px;
     }
   }
 }
@@ -54,7 +57,8 @@ section {
 }
 
 .skill-list {
-  @include dFlex($gap: 15px);
+  @include dFlex($justify: flex-start, $gap: 10px);
+  flex-wrap: wrap;
 
   > div {
     @include dFlex($gap: 5px);
@@ -64,6 +68,10 @@ section {
 .buttons {
   @include dFlex($gap: 15px);
   padding-top: 20px;
+
+  @media (max-width: 500px) {
+    padding-top: 0;
+  }
 
   > button {
     border: 1px solid #ffffff;
@@ -98,99 +106,87 @@ section {
   }
 }
 
-.image-container {
-  @include dFlex($align: flex-end, $gap: 30px, $direction: column);
+.project-image {
+  width: 520px;
+
+  @media (max-width: 1100px) {
+    width: 450px;
+  }
 
   @media (max-width: 1000px) {
-    width: 100%;
+    display: none;
+  }
+}
+
+.close-icon {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 500px) {
+    top: 24px;
+    right: 24px;
+  }
+
+  path {
+    transition: fill 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.3);
+
+    path {
+      fill: #3dcfb6;
+    }
+  }
+}
+
+.next-project {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  @include dFlex();
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  color: #3dcfb6;
+
+  > span {
+    transition: color 0.3s ease;
   }
 
   > svg {
-    cursor: pointer;
     transition: transform 0.3s ease;
-
-    @media (max-width: 1000px) {
-      position: absolute;
-      top: 32px;
-      right: 32px;
-    }
-
-    path {
-      transition: fill 0.3s ease;
-    }
-
-    &:hover {
-      transform: scale(1.3);
-
-      path {
-        fill: #3dcfb6;
-      }
-    }
   }
 
-  .project-image {
-    width: 520px;
-
-    @media (max-width: 1100px) {
-      width: 450px;
-    }
-
-    @media (max-width: 1000px) {
-      width: 100%;
-    }
-  }
-
-  .next-project {
-    @include dFlex();
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 400;
-    color: #3dcfb6;
-
-    @media (max-width: 1000px) {
-      position: absolute;
-      bottom: 32px;
-      right: 32px;
-    }
-
+  &:hover {
     > span {
-      transition: color 0.3s ease;
+      color: #ffffff;
     }
 
     > svg {
-      transition: transform 0.3s ease;
-    }
-
-    &:hover {
-      > span {
-        color: #ffffff;
-      }
-
-      > svg {
-        transform: translateX(5px);
-      }
+      transform: translateX(5px);
     }
   }
 }
 
-.green-color {
+.title-green {
   color: #3dcfb6;
-}
-
-.f-size-128 {
   font-size: 128px;
   font-weight: 700;
 
-  @media (max-width: 450px) {
+  @media (max-width: 1000px) {
     font-size: 72px;
   }
 }
 
-.f-size-64 {
+.title-normal {
   font-size: 64px;
   font-weight: 700;
 
-  @media (max-width: 450px) {
+  @media (max-width: 1000px) {
     font-size: 56px;
   }
 }

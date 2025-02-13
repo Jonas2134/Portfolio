@@ -2,10 +2,14 @@
 
 section {
   @include dFlex($justify: space-evenly, $gap: 90px, $align: flex-start);
-  padding: 112px;
+  max-width: 1600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 112px 92px;
   overflow: hidden;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     @include dFlex($gap: 90px, $direction: column);
     padding: 112px 180px;
   }
@@ -37,7 +41,7 @@ section {
       font-size: 24px;
       font-weight: 500;
 
-      @media (max-width: 1200px) {
+      @media (max-width: 1300px) {
         margin: 0;
       }
     }
@@ -49,6 +53,11 @@ section {
       background: #3dcfb61a;
       backdrop-filter: blur(4px);
       padding: 32px;
+      max-width: 30vw;
+
+      @media (max-width: 1300px) {
+        max-width: 100%;
+      }
 
       > h1 {
         font-size: 64px;
@@ -89,7 +98,7 @@ section {
   position: relative;
   border-radius: 30px;
   
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     width: 100%;
   }
 
@@ -99,7 +108,7 @@ section {
     transition: transform 0.3s ease;
     width: 500px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1300px) {
       width: 100%;
     }
   }

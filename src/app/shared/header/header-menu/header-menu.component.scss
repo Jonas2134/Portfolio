@@ -29,6 +29,7 @@
       position: relative;
       text-decoration: none;
       color: #ffff;
+      white-space: nowrap;
       transition: scale 0.2s ease;
 
       &::after {
@@ -90,8 +91,12 @@
         transition: all 0.5s ease;
         border: 2px solid #ffff;
         border-radius: 100px;
-        background: transparent;
+        background: #1C1C1C;
         overflow: hidden;
+
+        @media (max-width: 1000px) {
+          background: #08463B;
+        }
 
         &:hover {
           border: 2px solid #3dcfb6;

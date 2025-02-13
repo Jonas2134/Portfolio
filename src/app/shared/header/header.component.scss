@@ -1,23 +1,30 @@
 @import "../mixin.scss";
 
 header {
-  @include dFlex($justify: space-between);
-  position: relative;
-  font-size: 20px;
-  padding: 40px 96px;
-  overflow: hidden;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0) 15%,
     rgba(0, 0, 0, 0.6) 80%
   );
 
-  @media (max-width: 1000px) {
-    padding: 32px 32px;
-  }
+  >nav {
+    @include dFlex($justify: space-between, $gap: 20px);
+    max-width: 1600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    font-size: 20px;
+    padding: 40px 96px;
+    overflow: hidden;
 
-  @media (max-width: 550px) {
-    padding: 32px 16px;
+    @media (max-width: 1000px) {
+      padding: 32px 32px;
+    }
+  
+    @media (max-width: 550px) {
+      padding: 32px 16px;
+    }
   }
 }
 

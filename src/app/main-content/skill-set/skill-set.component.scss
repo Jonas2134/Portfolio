@@ -1,41 +1,58 @@
 @import "../../shared/mixin.scss";
 
-section {
+:host {
   position: relative;
-  @include dFlex($align: flex-start, $gap: 20px, $direction: column);
-  padding: 0 180px 90px 180px;
+  display: block;
+  overflow: visible;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    aspect-ratio: 1;
+    background: radial-gradient(#152925, #1c1c1c 70%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+section {
+  @include dFlex($justify: space-between, $align: flex-start, $gap: 80px);
+  max-width: 1600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 92px 90px 92px;
   color: #3dcfb6;
+  overflow: hidden;
+
+  @media (max-width: 1300px) {
+    @include dFlex($gap: 60px, $direction: column);
+    padding: 30px 180px 90px 180px;
+  }
 
   @media (max-width: 1100px) {
-    padding: 0 120px 90px 120px;
+    padding: 30px 120px 90px 120px;
   }
 
   @media (max-width: 1000px) {
-    padding: 0 70px 90px 70px;
+    padding: 30px 70px 90px 70px;
   }
 
   @media (max-width: 850px) {
-    padding: 0 30px 90px 30px;
+    padding: 30px 30px 90px 30px;
   }
 
   @media (max-width: 650px) {
-    padding: 0 16px 90px 16px;
+    padding: 30px 16px 90px 16px;
   }
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -30%;
-    width: 60%;
-    height: 100%;
-    background: radial-gradient(
-      circle,
-      rgba(8, 70, 59, 0.3) 0%,
-      transparent 50%
-    );
-    pointer-events: none;
-  }
+.skills {
+  @include dFlex($align: flex-start, $gap: 20px, $direction: column);
 
   > h2 {
     font-size: 24px;
@@ -43,15 +60,6 @@ section {
 
     @media (max-width: 850px) {
       font-size: 18px;
-    }
-  }
-
-  > div {
-    width: 100%;
-    @include dFlex($justify: space-around, $align: flex-start, $gap: 80px);
-
-    @media (max-width: 1200px) {
-      @include dFlex($gap: 60px, $direction: column);
     }
   }
 }
@@ -63,10 +71,10 @@ section {
   background: #3dcfb61a;
   backdrop-filter: blur(4px);
   padding: 32px;
-  max-width: 500px;
+  width: 500px;
 
-  @media (max-width: 1200px) {
-    max-width: 100%;
+  @media (max-width: 1300px) {
+    width: 100%;
   }
 
   @media (max-width: 400px) {
@@ -146,7 +154,7 @@ section {
   flex-wrap: wrap;
   gap: 40px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     max-width: 100%;
     justify-content: center;
   }
