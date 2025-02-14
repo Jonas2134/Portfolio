@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonComponent } from '../../shared/button/button.component';
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe, ButtonComponent],
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })

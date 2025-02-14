@@ -18,4 +18,8 @@ export class SingleProjectComponent {
   closeCard() {
     this.close.emit();
   }
+
+  nextProject() {
+    this.index = (this.index + 1) % this.projects.length;
+  }
 }

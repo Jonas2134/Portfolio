@@ -8,7 +8,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, ProjectListComponent, TranslatePipe],
   templateUrl: './featured-projects.component.html',
-  styleUrl: './featured-projects.component.scss'
+  styleUrl: './featured-projects.component.scss',
 })
 export class FeaturedProjectsComponent {
   projects = [
@@ -16,13 +16,13 @@ export class FeaturedProjectsComponent {
       projectName: 'Join',
       projectSkills: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
       projectIMG: 'join.png',
-      projectDescription: 'projects.joinDescription'
+      projectDescription: 'projects.joinDescription',
     },
     {
       projectName: 'Sharkie',
       projectSkills: ['HTML', 'CSS', 'JavaScript'],
       projectIMG: 'el-pollo-loco.png',
-      projectDescription: 'projects.sharkieDescription'
-    }
+      projectDescription: 'projects.sharkieDescription',
+    },
   ];
 }

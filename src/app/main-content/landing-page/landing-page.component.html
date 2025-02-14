@@ -3,19 +3,13 @@
         <h2 class="font-firacode">{{ 'landingPage.title' | translate }}</h2>
         <h1 class="font-karla">Jonas Stiefer</h1>
         <div class="btn-container font-karla">
-            <button>
-                <span>{{ 'landingPage.btn1' | translate }}</span>
-            </button>
-            <button>
-                <span>{{ 'global.contactMe' | translate }}</span>
-            </button>
+            <app-button [translationKey]="'landingPage.btn1'"></app-button>
+            <app-button [translationKey]="'global.contactMe'"></app-button>
         </div>
     
         <!-- Navigation Container -->
         <div class="container left">
-            <button class="arrow-button">
-                <span>↓</span>
-            </button>
+            <app-arrow-button></app-arrow-button>
             <div class="line" [ngStyle]="{'height': '25vh'}"></div>
         </div>
     
@@ -56,11 +50,6 @@
         </div>
     </main>
 
-
     <!-- Strip -->
-    <div class="strip">
-        <p class="font-karla">
-            Test test test
-        </p>
-    </div>
+    <app-info-strip class="info-strip"></app-info-strip>
 </section>

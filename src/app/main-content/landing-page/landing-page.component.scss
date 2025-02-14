@@ -5,8 +5,8 @@ section {
   position: relative;
   background: linear-gradient(55deg, #1c1c1c 30%, #08463b 90%);
   overflow: hidden;
-  
-  >main {
+
+  > main {
     max-width: 1600px;
     width: 100%;
     height: 100%;
@@ -20,26 +20,26 @@ section {
       font-weight: 400;
       color: #d9d9d9;
       text-align: center;
-  
+
       @media (max-width: 650px) {
         font-size: 28px;
       }
-  
+
       @media (max-width: 450px) {
         font-size: 18px;
       }
     }
-  
+
     > h1 {
       font-size: 128px;
       font-weight: 700;
       color: #d9d9d9;
       text-align: center;
-  
+
       @media (max-width: 650px) {
         font-size: 82px;
       }
-  
+
       @media (max-width: 450px) {
         font-size: 42px;
       }
@@ -59,74 +59,12 @@ section {
   @media (max-width: 450px) {
     @include dFlex($gap: 24px, $direction: column);
   }
-
-  > button {
-    border: 1px solid #ffffff;
-    border-radius: 100px;
-    font-size: 18px;
-    font-weight: 400;
-    color: #ffffff;
-    background-color: #292929;
-    padding: 18px 24px;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-    position: relative;
-    z-index: 10;
-    transition: all 0.2s ease;
-
-    @media (max-width: 550px) {
-      font-size: 16px;
-      padding: 16px 18px;
-    }
-
-    > span {
-      display: inline-block;
-    }
-
-    &:hover {
-      color: #3dcfb6;
-      border-color: #3dcfb6;
-    }
-
-    &:hover > span {
-      @include scroll-left-animation($duration: 2s);
-    }
-  }
 }
 
-/* Navigation Container */
 .container {
   position: absolute;
   bottom: 0;
   @include dFlex($justify: start, $gap: 24px, $direction: column);
-}
-
-.arrow-button {
-  border: 1px solid #3dcfb6;
-  border-radius: 100px;
-  background-color: transparent;
-  @include dFlex();
-  padding: 15px 10px;
-  cursor: pointer;
-
-  > span {
-    color: #ffffff;
-    font-size: 25px;
-    animation: arrow-bounce 1.5s ease-in-out infinite;
-    display: inline-block;
-  }
-}
-
-@keyframes arrow-bounce {
-  0%,
-  100% {
-    transform: translateY(5px);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
 }
 
 .link-container {
@@ -223,26 +161,11 @@ section {
   }
 }
 
-/* Strip */
-.strip {
-  @include dFlex();
+.info-strip {
   position: absolute;
   bottom: 5vh;
   left: 50%;
   width: 101%;
   z-index: 5;
-  height: 62px;
   transform: translateX(-50%) rotate(-3deg);
-  backdrop-filter: blur(5.3px);
-  background-color: #ffffff1f;
-  overflow: hidden;
-
-  > p {
-    width: 100%;
-    font-size: 32px;
-    font-weight: 400;
-    color: #fff;
-    @include scroll-left-animation($duration: 10s);
-    overflow: hidden;
-  }
 }

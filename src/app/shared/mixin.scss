@@ -8,19 +8,3 @@
     flex-direction: $direction;
   }
 }
-
-@mixin scroll-left-keyframes {
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(130%);
-    }
-    100% {
-      transform: translateX(-130%);
-    }
-  }
-}
-
-@mixin scroll-left-animation($duration: 5s, $timing-function: linear, $iteration-count: infinite) {
-  @include scroll-left-keyframes;
-  animation: scroll-left $duration $timing-function $iteration-count;
-}

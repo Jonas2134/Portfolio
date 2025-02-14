@@ -1,0 +1,28 @@
+button {
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #292929;
+  padding: 18px 24px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  position: relative;
+  transition: all 0.2s ease;
+
+  @media (max-width: 550px) {
+    font-size: 16px;
+    padding: 16px 18px;
+  }
+
+  > span {
+    display: inline-block;
+  }
+
+  &:hover {
+    color: #3dcfb6;
+    border-color: #3dcfb6;
+  }
+}

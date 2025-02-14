@@ -1,0 +1,16 @@
+@import "../../../shared/mixin.scss";
+
+.arrow-button {
+  @include dFlex();
+  border: 1px solid #3dcfb6;
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 15px 10px;
+  cursor: pointer;
+
+  > span {
+    color: #ffffff;
+    font-size: 25px;
+    display: inline-block;
+  }
+}
