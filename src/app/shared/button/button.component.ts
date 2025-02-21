@@ -31,7 +31,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   ],
 })
 export class ButtonComponent {
-  @Input() translationKey!: string;
+  @Input() translationKey?: string;
 
   isHovered = false;
   animationState = 'inactive';

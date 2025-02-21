@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SingleProjectComponent } from '../single-project/single-project.component';
+import { ProjectInterface } from '../../../interfaces/project-interface';
 
 @Component({
   selector: 'app-project-list',
@@ -10,7 +11,7 @@ import { SingleProjectComponent } from '../single-project/single-project.compone
   styleUrl: './project-list.component.scss'
 })
 export class ProjectListComponent {
-  @Input() projects!: any[];
+  @Input() projects?: ProjectInterface[] | undefined;
   @Input() index!: number;
   @Input() isFirstProject: boolean = false;
 

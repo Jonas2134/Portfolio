@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TranslateService } from '@ngx-translate/core';
+import { NavigationService } from './service/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
   isHidden = false;
   private lastScrollTop = 0;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private navigation: NavigationService) {
     this.translate.addLangs(['en', 'de']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');

@@ -1,3 +1,5 @@
-<button (mouseenter)="startAnimation()" (mouseleave)="resetAnimation()">
-    <span [@slideLoop]="animationState" (@slideLoop.done)="onAnimationDone()">{{ translationKey | translate }}</span>
-</button>
+@if (translationKey) {
+    <button (mouseenter)="startAnimation()" (mouseleave)="resetAnimation()">
+        <span [@slideLoop]="animationState" (@slideLoop.done)="onAnimationDone()">{{ translationKey | translate }}</span>
+    </button>
+}

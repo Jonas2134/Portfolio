@@ -25,10 +25,10 @@
     </div>
 
     <div class="link-container">
-        <a href="">{{ 'global.aboutMe' | translate }}</a>
+        <a [routerLink]="['/']" fragment="about-me">{{ 'global.aboutMe' | translate }}</a>
 
-        <a href="">{{ 'header.skills' | translate }}</a>
+        <a [routerLink]="['/']" fragment="skills">{{ 'header.skills' | translate }}</a>
 
-        <a href="">{{ 'header.projects' | translate }}</a>
+        <a [routerLink]="['/']" fragment="projects">{{ 'header.projects' | translate }}</a>
     </div>
 </div>
