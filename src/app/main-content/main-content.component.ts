@@ -3,7 +3,9 @@ import {
   Component,
   ElementRef,
   OnInit,
+  QueryList,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -13,6 +15,9 @@ import { FeaturedProjectsComponent } from './featured-projects/featured-projects
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { SliderComponent } from './slider/slider.component';
 import { NavigationService } from '../service/navigation.service';
+import { ActivatedRoute } from '@angular/router';
+
+type SectionKey = 'home' | 'about-me' | 'skills' | 'projects' | 'comments' | 'contact-me';
 
 @Component({
   selector: 'app-main-content',
@@ -37,10 +42,10 @@ export class MainContentComponent implements AfterViewInit {
   @ViewChild('comments', { read: ElementRef }) comments!: ElementRef<HTMLElement>;
   @ViewChild('contactMe', { read: ElementRef }) contactMe!: ElementRef<HTMLElement>;
 
-  constructor(private navigation: NavigationService) {}
+  constructor(private navigation: NavigationService, private route: ActivatedRoute) {}
 
   ngAfterViewInit(): void {
-    const elements = {
+    const elements: Record<SectionKey, HTMLElement> = {
       home: this.home.nativeElement,
       'about-me': this.aboutMe.nativeElement,
       skills: this.skills.nativeElement,
@@ -50,5 +55,14 @@ export class MainContentComponent implements AfterViewInit {
     };
 
     this.navigation.setupIntersectionObserver(elements);
+
+    this.route.data.subscribe(data => {
+      const target = data['scrollTo'] as SectionKey | undefined;
+      if (target && elements[target]) {
+        setTimeout(() => {
+          elements[target].scrollIntoView({ behavior: 'smooth' });
+        }, 0);
+      }
+    });
   }
 }

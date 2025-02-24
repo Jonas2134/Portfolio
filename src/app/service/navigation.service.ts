@@ -47,7 +47,7 @@ export class NavigationService {
     history.replaceState(null, '', newUrl);
   }
 
-  private scrollToSection(sectionId: string): void {
+  public scrollToSection(sectionId: string): void {
     const element = this.elements[sectionId];
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
