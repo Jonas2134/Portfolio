@@ -61,7 +61,7 @@ export class MainContentComponent implements AfterViewInit {
       if (target && elements[target]) {
         setTimeout(() => {
           elements[target].scrollIntoView({ behavior: 'smooth' });
-        }, 0);
+        }, 100);
       }
     });
   }

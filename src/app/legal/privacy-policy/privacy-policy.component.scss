@@ -1,0 +1,62 @@
+@import "../../shared/mixin.scss";
+
+section {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  padding: 16px 92px 0 92px;
+
+  > div {
+    border: 1px solid #3dcfb6;
+    border-radius: 30px;
+    padding: 56px;
+    background: rgba(61, 207, 182, 0.1019607843);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 16px;
+  }
+}
+
+h1 {
+  font-size: 64px;
+  color: #3dcfb6;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 32px;
+  color: #3dcfb6;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 24px;
+  color: #3dcfb6;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 18px;
+  color: #3dcfb6;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-left: 12px;
+  margin-bottom: 10px;
+}
+
+ul {
+    margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #3dcfb6;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
