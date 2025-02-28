@@ -5,7 +5,19 @@ section {
   margin-left: auto;
   margin-right: auto;
   margin-top: 150px;
-  padding: 16px 92px 0 92px;
+  padding: 16px 92px 0;
+
+  @media (max-width: 1000px) {
+    padding: 0 70px;
+  }
+
+  @media (max-width: 850px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 0 16px;
+  }
 
   > div {
     border: 1px solid #3dcfb6;
@@ -15,6 +27,14 @@ section {
     backdrop-filter: blur(4px);
     color: #ffffff;
     font-size: 16px;
+
+    @media (max-width: 500px) {
+      padding: 32px;
+    }
+
+    @media (max-width: 400px) {
+      padding: 24px;
+    }
   }
 }
 
@@ -22,12 +42,28 @@ h1 {
   font-size: 64px;
   color: #3dcfb6;
   margin-bottom: 16px;
+
+  @media (max-width: 800px) {
+    font-size: 54px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 34px;
+  }
 }
 
 h2 {
   font-size: 32px;
   color: #3dcfb6;
   margin-bottom: 10px;
+
+  @media (max-width: 400px) {
+    font-size: 28px;
+  }
 }
 
 h3 {
