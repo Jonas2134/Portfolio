@@ -20,24 +20,41 @@
             <div class="input-field border-top">
                 <label for="name" class="font-firacode">{{ 'form.q1' | translate }}</label>
 
-                <input [(ngModel)]="contactData.name" id="name" name="name" type="text" [placeholder]="'form.placeHolderText1' | translate" required>
+                <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" type="text"
+                    [placeholder]="'form.placeHolderText1' | translate" required>
+
+                @if (!name.valid && name.touched) {
+                <span>Please call a Name</span>
+                }
             </div>
 
             <div class="input-field">
                 <label for="email" class="font-firacode">{{ 'form.q2' | translate }}</label>
 
-                <input [(ngModel)]="contactData.email" id="email" name="email" type="email" [placeholder]="'form.placeHolderText2' | translate" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" type="email"
+                    [placeholder]="'form.placeHolderText2' | translate"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+
+                @if (!email.valid && email.touched) {
+                <span>Please enter a E-Mail</span>
+                }
             </div>
 
             <div class="input-field">
                 <label for="message" class="font-firacode">{{ 'form.q3' | translate }}</label>
 
-                <textarea [(ngModel)]="contactData.message" name="message" id="message" [placeholder]="'form.placeHolderText3' | translate" required></textarea>
+                <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message"
+                    [placeholder]="'form.placeHolderText3' | translate" required></textarea>
+
+                @if (!message.valid && message.touched) {
+                <span>Please enter a Message</span>
+                }
             </div>
 
             <p>
                 <label class="checkboxItem">
-                    <input [(ngModel)]="contactData.checkbox" type="checkbox" id="checkbox" name="checkbox" class="checkbox" required>
+                    <input type="checkbox" id="checkbox" name="checkbox"
+                        class="checkbox" required>
                 </label>
                 <span>
                     {{ 'form.text3' | translate }}
@@ -47,7 +64,7 @@
             </p>
 
             <div class="btn-container">
-                <app-button [translationKey]="'form.btn'"></app-button>
+                <input type="submit" value="{{ 'form.btn' | translate }} ;)">
             </div>
         </form>
     </div>

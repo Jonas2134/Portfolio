@@ -23,7 +23,6 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideClientHydration(),
     provideAnimations(),
     provideAnimationsAsync(),
     provideZoneChangeDetection({ eventCoalescing: true }),
