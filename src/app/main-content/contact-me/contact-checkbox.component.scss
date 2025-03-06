@@ -1,0 +1,67 @@
+@import "../../shared/mixin.scss";
+
+.checkbox-container {
+  @include dFlex($gap: 4px, $direction: column);
+  padding: 40px 0;
+
+  .privacy-section {
+    @include dFlex($gap: 8px);
+
+    > span {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 400;
+
+      > a {
+        color: #3dcfb6;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  width: fit-content;
+  line-height: 1;
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+
+  .checkbox {
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3dcfb6;
+    border-radius: 2px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:checked::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 2px;
+      width: 12px;
+      height: 6px;
+      border-bottom: 2px solid #3dcfb6;
+      border-left: 2px solid #3dcfb6;
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px 3px #3dcfb64d;
+      background-color: #3dcfb64d;
+    }
+  }
+}

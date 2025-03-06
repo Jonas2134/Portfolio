@@ -16,56 +16,67 @@
     </div>
 
     <div class="form-container">
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <div class="input-field border-top">
+        <form [formGroup]="contactData" (ngSubmit)="onSubmit()">
+            <p class="input-field border-top">
                 <label for="name" class="font-firacode">{{ 'form.q1' | translate }}</label>
 
-                <input #name="ngModel" [(ngModel)]="contactData.name" id="name" name="name" type="text"
-                    [placeholder]="'form.placeHolderText1' | translate" required>
+                <input type="text" id="name" name="name" formControlName="name"
+                    [placeholder]="'form.placeHolderText1' | translate" autocomplete="name">
 
-                @if (!name.valid && name.touched) {
-                <span>Please call a Name</span>
+                @if (contactData.get('name')?.invalid && contactData.get('name')?.touched) {
+                <small class="error-message">Please call a Name.</small>
                 }
-            </div>
-
-            <div class="input-field">
-                <label for="email" class="font-firacode">{{ 'form.q2' | translate }}</label>
-
-                <input #email="ngModel" [(ngModel)]="contactData.email" id="email" name="email" type="email"
-                    [placeholder]="'form.placeHolderText2' | translate"
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-
-                @if (!email.valid && email.touched) {
-                <span>Please enter a E-Mail</span>
-                }
-            </div>
-
-            <div class="input-field">
-                <label for="message" class="font-firacode">{{ 'form.q3' | translate }}</label>
-
-                <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" id="message"
-                    [placeholder]="'form.placeHolderText3' | translate" required></textarea>
-
-                @if (!message.valid && message.touched) {
-                <span>Please enter a Message</span>
-                }
-            </div>
-
-            <p>
-                <label class="checkboxItem">
-                    <input type="checkbox" id="checkbox" name="checkbox"
-                        class="checkbox" required>
-                </label>
-                <span>
-                    {{ 'form.text3' | translate }}
-                    <a class="font-firacode" [routerLink]="['/privacy']">{{ 'form.text4' | translate }}</a>
-                    {{ 'form.text5' | translate }}
-                </span>
             </p>
 
-            <div class="btn-container">
-                <input type="submit" value="{{ 'form.btn' | translate }} ;)">
+            <p class="input-field">
+                <label for="email" class="font-firacode">{{ 'form.q2' | translate }}</label>
+
+                <input type="email" id="email" name="email" formControlName="email"
+                    [placeholder]="'form.placeHolderText2' | translate"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" autocomplete="email">
+
+                @if (contactData.get('email')?.invalid && contactData.get('email')?.touched) {
+                <small class="error-message">Please enter a E-Mail.</small>
+                }
+            </p>
+
+            <p class="input-field">
+                <label for="message" class="font-firacode">{{ 'form.q3' | translate }}</label>
+
+                <textarea id="message" name="message" formControlName="message"
+                    [placeholder]="'form.placeHolderText3' | translate"></textarea>
+
+                @if (contactData.get('message')?.invalid && contactData.get('message')?.touched) {
+                <small class="error-message">Please enter a Message.</small>
+                }
+            </p>
+
+            <p class="checkbox-container">
+                <label class="privacy-section">
+                    <label class="checkboxItem">
+                        <input type="checkbox" name="checkbox" formControlName="privacyAccepted" class="checkbox">
+                    </label>
+                    <span>
+                        {{ 'form.text3' | translate }}
+                        <a class="font-firacode" [routerLink]="['/privacy']">{{ 'form.text4' | translate }}</a>
+                        {{ 'form.text5' | translate }}
+                    </span>
+                </label>
+
+                @if (contactData.get('privacyAccepted')?.invalid && contactData.get('privacyAccepted')?.touched) {
+                <small class="error-message">Please confirm the privacy policy.</small>
+                }
+            </p>
+
+            <p class="btn-container">
+                <input type="submit" [disabled]="contactData.invalid" value="{{ 'form.btn' | translate }} ;)">
+            </p>
+
+            @if (submitted) {
+            <div>
+                Thank you, your message has been sent!
             </div>
+            }
         </form>
     </div>
 </section>

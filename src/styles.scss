@@ -148,3 +148,18 @@ html {
   border-radius: 5px;
   background-color: #083d33b3;
 }
+
+@keyframes cdk-text-field-autofill-start { }
+@keyframes cdk-text-field-autofill-end { }
+
+::ng-deep input, 
+::ng-deep textarea {
+  animation-duration: 0s;
+  animation-delay: 1ms;
+}
+
+.autofilled {
+  background-color: #083d33b3 !important;
+  border: 1px solid #3dcfb680 !important;
+  -webkit-text-fill-color: #fff !important;
+}

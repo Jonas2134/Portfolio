@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -8,23 +8,25 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, FormsModule, RouterLink],
+  imports: [CommonModule, TranslatePipe, FormsModule, RouterLink, ReactiveFormsModule],
   templateUrl: './contact-me.component.html',
-  styleUrl: './contact-me.component.scss',
+  styleUrls: ['./contact-me.component.scss', './contact-form.component.scss', './contact-checkbox.component.scss'],
 })
 export class ContactMeComponent {
   http = inject(HttpClient);
 
-  contactData = {
-    name: '',
-    email: '',
-    message: '',
-  };
+  contactData = this.fb.group ({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required],
+    privacyAccepted: [false, Validators.requiredTrue]
+  });
 
   mailTest = true;
+  submitted = false;
 
   post = {
-    endPoint: 'https://jonas-stiefer.com/sendMail.php',
+    endPoint: 'https://portfolio.jonas-stiefer.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -34,24 +36,30 @@ export class ContactMeComponent {
     },
   };
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.contactData.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData.value), this.post.options)
         .subscribe({
-          next: (response) => {
-
-            ngForm.resetForm();
+          next: (response) => {            
+            this.contactData.reset();
+            setTimeout(() => {
+              this.submitted = false;
+            }, 4000);
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
+    } else if (this.contactData.valid && this.mailTest) {
+      console.log(this.contactData.value);
+      this.contactData.reset();
+      setTimeout(() => {
+        this.submitted = false;
+      }, 4000);
     }
   }
 }
