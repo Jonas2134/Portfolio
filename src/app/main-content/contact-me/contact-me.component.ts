@@ -4,11 +4,12 @@ import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { TranslatePipe } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { MessageConfirmationComponent } from './message-confirmation/message-confirmation.component';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [CommonModule, TranslatePipe, FormsModule, RouterLink, ReactiveFormsModule],
+  imports: [CommonModule, TranslatePipe, FormsModule, RouterLink, ReactiveFormsModule, MessageConfirmationComponent],
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.scss', './contact-form.component.scss', './contact-checkbox.component.scss'],
 })
@@ -47,7 +48,7 @@ export class ContactMeComponent {
             this.contactData.reset();
             setTimeout(() => {
               this.submitted = false;
-            }, 4000);
+            }, 3000);
           },
           error: (error) => {
             console.error(error);
@@ -59,7 +60,7 @@ export class ContactMeComponent {
       this.contactData.reset();
       setTimeout(() => {
         this.submitted = false;
-      }, 4000);
+      }, 3000);
     }
   }
 }

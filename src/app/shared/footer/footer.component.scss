@@ -45,7 +45,7 @@ footer {
 }
 
 .link-container {
-  @include dFlex($align: flex-end, $gap: 10px, $direction: column);
+  @include dFlex($align: flex-end, $gap: 5px, $direction: column);
 
   > a {
     position: relative;
