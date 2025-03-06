@@ -24,7 +24,7 @@
                     [placeholder]="'form.placeHolderText1' | translate" autocomplete="name">
 
                 @if (contactData.get('name')?.invalid && contactData.get('name')?.touched) {
-                <small class="error-message">Please call a Name.</small>
+                <small class="error-message">{{ 'form.errName' | translate }}</small>
                 }
             </p>
 
@@ -36,7 +36,7 @@
                     pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" autocomplete="email">
 
                 @if (contactData.get('email')?.invalid && contactData.get('email')?.touched) {
-                <small class="error-message">Please enter a E-Mail.</small>
+                <small class="error-message">{{ 'form.errMail' | translate }}</small>
                 }
             </p>
 
@@ -47,7 +47,7 @@
                     [placeholder]="'form.placeHolderText3' | translate"></textarea>
 
                 @if (contactData.get('message')?.invalid && contactData.get('message')?.touched) {
-                <small class="error-message">Please enter a Message.</small>
+                <small class="error-message">{{ 'form.errMessage' | translate }}</small>
                 }
             </p>
 
@@ -64,7 +64,7 @@
                 </label>
 
                 @if (contactData.get('privacyAccepted')?.invalid && contactData.get('privacyAccepted')?.touched) {
-                <small class="error-message">Please confirm the privacy policy.</small>
+                <small class="error-message">{{ 'form.errCheckbox' | translate }}</small>
                 }
             </p>
 
@@ -73,7 +73,7 @@
             </p>
 
             @if (submitted) {
-                <app-message-confirmation class="message-dialog"></app-message-confirmation>
+            <app-message-confirmation class="message-dialog"></app-message-confirmation>
             }
         </form>
     </div>

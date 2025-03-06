@@ -9,7 +9,6 @@
   },
   "aboutMe": {
     "subtitle": "Wer ich bin",
-    "title": "Über mich",
     "description": "Hallo, ich bin ein luxemburgisch und deutsch sprechender Frontend-Entwickler aus Luxemburg. Motiviert durch die grenzenlosen Möglichkeiten in der IT, bin ich begeistert davon, visuell fesselnde und intuitive Webseiten und Anwendungen zu entwickeln.",
     "location": "Ich bin flexibel, was das Arbeitsumfeld angeht, und kann sowohl vor Ort in München als auch aus der Ferne effektiv arbeiten.",
     "mindset": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um meine Kenntnisse und Fähigkeiten ständig zu verbessern.",
@@ -53,7 +52,12 @@
     "placeHolderText1": "Ihr Name steht hier",
     "placeHolderText2": "deineemail@email.com",
     "placeHolderText3": "Hallo Jonas, ich bin interessiert an...",
-    "btn": "Sag Hallo"
+    "btn": "Sag Hallo",
+    "errName": "Bitte einen Namen nennen.",
+    "errMail": "Bitte geben Sie eine E-Mail ein.",
+    "errMessage": "Bitte geben Sie eine Nachricht ein.",
+    "errCheckbox": "Bitte bestätigen Sie die Datenschutzbestimmungen.",
+    "confirmDialog": "Danke, Ihre Nachricht wurde abgeschickt!"
   },
   "global": {
     "aboutMe": "Über mich",

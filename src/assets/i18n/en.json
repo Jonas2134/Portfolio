@@ -52,7 +52,12 @@
     "placeHolderText1": "Your name goes here",
     "placeHolderText2": "youremail@email.com",
     "placeHolderText3": "Hello Jonas, I am interested in...",
-    "btn": "Say Hello"
+    "btn": "Say Hello",
+    "errName": "Please call a Name.",
+    "errMail": "Please enter a E-Mail.",
+    "errMessage": "Please enter a Message.",
+    "errCheckbox": "Please confirm the privacy policy.",
+    "confirmDialog": "Thank you, your message has been sent!"
   },
   "global": {
     "aboutMe": "About me",
