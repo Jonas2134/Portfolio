@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, TranslatePipe, RouterLink],
   templateUrl: './header-menu.component.html',
-  styleUrl: './header-menu.component.scss',
+  styleUrls: ['./header-menu.component.scss', './header-menu-checkbox.component.scss'],
 })
 export class HeaderMenuComponent implements OnInit{
   @Input() isVisible: boolean = false;

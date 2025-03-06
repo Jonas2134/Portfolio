@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ButtonComponent } from '../../shared/button/button.component';
-import { NavigationService } from '../../service/navigation.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,7 +9,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, TranslatePipe, ButtonComponent, RouterLink],
   templateUrl: './skill-set.component.html',
-  styleUrl: './skill-set.component.scss',
+  styleUrls: ['./skill-set.component.scss', './skill-set-icons.component.scss', './skill-set-background.component.scss'],
 })
 export class SkillSetComponent {
   skills = [

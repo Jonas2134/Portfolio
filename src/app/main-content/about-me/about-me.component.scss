@@ -29,112 +29,67 @@ section {
   @media (max-width: 650px) {
     padding: 112px 16px;
   }
+}
 
-  > div {
-    @include dFlex($align: flex-start, $gap: 20px, $direction: column);
-    color: #3dcfb6;
-    font-size: 18px;
-    font-weight: 400;
+.about-me-container {
+  @include dFlex($align: flex-start, $gap: 20px, $direction: column);
+  color: #3dcfb6;
+  font-size: 18px;
+  font-weight: 400;
 
-    > h2 {
-      margin: 98px 0 0 0;
-      font-size: 24px;
-      font-weight: 500;
+  > h2 {
+    margin: 98px 0 0 0;
+    font-size: 24px;
+    font-weight: 500;
 
-      @media (max-width: 1300px) {
-        margin: 0;
-      }
+    @media (max-width: 1300px) {
+      margin: 0;
+    }
+  }
+
+  > article {
+    @include dFlex($align: flex-start, $gap: 32px, $direction: column);
+    border: 1px solid #3dcfb6;
+    border-radius: 30px;
+    background: #3dcfb61a;
+    backdrop-filter: blur(4px);
+    padding: 32px;
+    max-width: 30vw;
+
+    @media (max-width: 1300px) {
+      max-width: 100%;
+    }
+
+    > h1 {
+      font-size: 64px;
+      font-weight: 700;
+    }
+
+    > span {
+      display: block;
+      color: #ffffff;
     }
 
     > div {
-      @include dFlex($align: flex-start, $gap: 32px, $direction: column);
-      border: 1px solid #3dcfb6;
-      border-radius: 30px;
-      background: #3dcfb61a;
-      backdrop-filter: blur(4px);
-      padding: 32px;
-      max-width: 30vw;
+      @include dFlex($align: flex-start, $gap: 16px, $direction: column);
 
-      @media (max-width: 1300px) {
-        max-width: 100%;
-      }
-
-      > h1 {
-        font-size: 64px;
-        font-weight: 700;
-      }
-
-      > span {
-        display: block;
-        color: #ffffff;
-      }
-
-      > div {
-        @include dFlex($align: flex-start, $gap: 16px, $direction: column);
-
-        > div {
-          @include dFlex($align: flex-start, $gap: 24px);
-
-          > div {
-            width: 33px;
-            flex-shrink: 0;
-          }
-
-          > span {
-            color: #ffffffcc;
-            transition: color 0.2s ease;
-
-            &:hover {
-              color: #ffffff;
-            }
-          }
-        }
+      > p {
+        @include dFlex($align: flex-start, $gap: 24px);
       }
     }
   }
 }
 
-.image-container {
-  position: relative;
-  border-radius: 30px;
-  
-  @media (max-width: 1300px) {
-    width: 100%;
-  }
+.icon {
+  width: 33px;
+  flex-shrink: 0;
+}
 
-  > img {
-    z-index: 5;
-    border-radius: 30px;
-    transition: transform 0.3s ease;
-    width: 500px;
+.text {
+  color: #ffffffcc;
+  transition: color 0.2s ease;
 
-    @media (max-width: 1300px) {
-      width: 100%;
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 20px,
-      #3dcfb6 20px,
-      #3dcfb6 21px
-    );
-    border-radius: 30px;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  &:hover::after {
-    opacity: 1;
-    transform: translate(-20px, 20px);
+  &:hover {
+    color: #ffffff;
   }
 }

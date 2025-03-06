@@ -1,0 +1,101 @@
+@import "../../shared/mixin.scss";
+
+.container {
+  position: absolute;
+  bottom: 0;
+  @include dFlex($justify: start, $gap: 24px, $direction: column);
+}
+
+.left {
+  left: 20%;
+
+  @media (max-width: 2000px) {
+    left: 15%;
+  }
+
+  @media (max-width: 1500px) {
+    left: 10%;
+  }
+
+  @media (max-width: 650px) {
+    left: 15px;
+  }
+}
+
+.right {
+  right: 20%;
+
+  @media (max-width: 2000px) {
+    right: 15%;
+  }
+
+  @media (max-width: 1500px) {
+    right: 10%;
+  }
+
+  @media (max-width: 650px) {
+    right: 15px;
+  }
+}
+
+.line {
+  width: 1px;
+  background-color: #3dcfb6;
+}
+
+.link-container {
+  @include dFlex($gap: 16px, $direction: column);
+
+  > a {
+    .hover-icon {
+      transition: fill 0.3s ease;
+    }
+
+    &:hover {
+      .hover-icon path {
+        fill: #ffffff;
+      }
+    }
+  }
+}
+
+.mail {
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #3dcfb6;
+    scale: 1.1;
+  }
+}
+
+.social-link {
+  position: relative;
+  transition: scale 0.2s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -15px;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &:hover {
+    scale: 1.1;
+
+    &::after {
+      background-color: #6ad7bf;
+    }
+  }
+}

@@ -15,20 +15,20 @@
     </div>
     }
 
-    <div class="custom-checkbox">
+    <p class="custom-checkbox">
         <input id="status" type="checkbox" name="status" [checked]="isEnglish" (change)="changeLanguage($event)">
         <label for="status">
             <div class="status-switch">
                 <div class="slider"></div>
             </div>
         </label>
-    </div>
+    </p>
 
-    <div class="link-container">
+    <p class="link-container">
         <a [routerLink]="['/']" fragment="about-me">{{ 'global.aboutMe' | translate }}</a>
 
         <a [routerLink]="['/']" fragment="skills">{{ 'header.skills' | translate }}</a>
 
         <a [routerLink]="['/']" fragment="projects">{{ 'header.projects' | translate }}</a>
-    </div>
+    </p>
 </div>

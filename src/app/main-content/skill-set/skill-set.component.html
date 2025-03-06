@@ -2,22 +2,24 @@
     <div class="skills">
         <h2 class="font-karla">{{ 'skillSet.subtitle' | translate }}</h2>
 
-        <div class="skill-set-container font-karla">
+        <article class="skill-set-container font-karla">
             <h1 class="font-firacode">{{ 'skillSet.title' | translate }}</h1>
 
-            <div>
+            <p>
                 <span>{{ 'skillSet.description' | translate }}</span>
 
-                <div>
-                    <h2 class="font-firacode">{{ 'skillSet.q1' | translate }}<span>{{ 'skillSet.q2' | translate
-                            }}</span></h2>
+                <span class="skill-set-text">
+                    <h2 class="font-firacode">
+                        {{ 'skillSet.q1' | translate }}
+                        <span>{{ 'skillSet.q2' | translate }}</span>
+                    </h2>
 
                     <span>{{ 'skillSet.a' | translate }}</span>
-                </div>
-            </div>
+                </span>
+            </p>
 
             <app-button [routerLink]="['/']" fragment="contact-me" [translationKey]="'global.letsTalk'"></app-button>
-        </div>
+        </article>
     </div>
 
     <div class="font-firacode skill-container">

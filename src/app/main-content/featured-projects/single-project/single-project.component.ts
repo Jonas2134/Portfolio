@@ -8,7 +8,7 @@ import { ProjectInterface } from '../../../interfaces/project-interface';
   standalone: true,
   imports: [CommonModule, TranslatePipe],
   templateUrl: './single-project.component.html',
-  styleUrl: './single-project.component.scss',
+  styleUrls: ['./single-project.component.scss', './single-project-button.component.scss'],
 })
 export class SingleProjectComponent {
   @Input() projects?: ProjectInterface[] | undefined;

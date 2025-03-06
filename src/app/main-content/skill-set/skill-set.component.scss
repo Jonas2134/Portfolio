@@ -1,24 +1,5 @@
 @import "../../shared/mixin.scss";
 
-:host {
-  position: relative;
-  display: block;
-  overflow: visible;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: -50%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    aspect-ratio: 1;
-    background: radial-gradient(#152925, #1c1c1c 70%);
-    border-radius: 50%;
-    z-index: -1;
-  }
-}
-
 section {
   @include dFlex($justify: space-between, $align: flex-start, $gap: 80px);
   max-width: 1600px;
@@ -95,59 +76,22 @@ section {
     }
   }
 
-  > div {
+  > p {
     font-size: 18px;
     color: #ffffff;
     @include dFlex($align: flex-start, $gap: 32px, $direction: column);
-
-    > span {
-      display: block;
-    }
-
-    > div {
-      @include dFlex($align: flex-start, $gap: 16px, $direction: column);
-
-      > h2 {
-        font-size: 24px;
-        font-weight: 700;
-
-        > span {
-          color: #3dcfb6;
-        }
-      }
-    }
   }
 }
 
-.skill-container {
-  max-width: 600px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+.skill-set-text {
+  @include dFlex($align: flex-start, $gap: 16px, $direction: column);
 
-  @media (max-width: 1300px) {
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  > div {
-    width: 105px;
-    height: 120px;
-    @include dFlex($justify: flex-start, $gap: 8px, $direction: column);
-
-    > img {
-      transition: all 200ms ease-out;
-
-      &:hover {
-        scale: 1.1;
-      }
-    }
+  > h2 {
+    font-size: 24px;
+    font-weight: 700;
 
     > span {
-      text-align: center;
-      font-size: 18px;
-      font-weight: 400;
-      color: #ffffff;
+      color: #3dcfb6;
     }
   }
 }

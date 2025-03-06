@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, TranslatePipe, ButtonComponent, ArrowButtonComponent, InfoStripComponent, RouterLink],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss',
+  styleUrls: ['./landing-page.component.scss', './landing-page-container.component.scss'],
 })
 export class LandingPageComponent {
   private ScreenSizeService = inject(ScreenSizeService);

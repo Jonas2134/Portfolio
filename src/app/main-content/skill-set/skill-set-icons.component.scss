@@ -1,0 +1,34 @@
+@import "../../shared/mixin.scss";
+
+.skill-container {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  @media (max-width: 1300px) {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  > div {
+    width: 105px;
+    height: 120px;
+    @include dFlex($justify: flex-start, $gap: 8px, $direction: column);
+
+    > img {
+      transition: all 200ms ease-out;
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+
+    > span {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ffffff;
+    }
+  }
+}

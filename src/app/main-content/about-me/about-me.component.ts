@@ -6,7 +6,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   standalone: true,
   imports: [TranslatePipe],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss'
+  styleUrls: ['./about-me.component.scss', './about-me-img.component.scss']
 })
 export class AboutMeComponent {
 
