@@ -5,13 +5,19 @@
   height: 62px;
   backdrop-filter: blur(5.3px);
   background-color: #ffffff1f;
-  overflow: hidden;
+}
 
-  > p {
-    width: 100%;
-    font-size: 32px;
-    font-weight: 400;
-    color: #fff;
-    overflow: hidden;
-  }
+.marquee-container {
+  width: max-content;
+  display: flex;
+  transform: translateX(-50%);
+  font-size: 32px;
+  font-weight: 400;
+  color: #fff;
+  overflow: clip;
+  white-space: nowrap;
+}
+
+.point {
+  padding: 0 110px;
 }

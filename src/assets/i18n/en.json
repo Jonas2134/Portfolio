@@ -5,7 +5,11 @@
   },
   "landingPage": {
     "title": "Frontend Developer",
-    "btn1": "Check my work"
+    "btn1": "Check my work",
+    "info1": "Available for remote work",
+    "info2": "Frontend Developer",
+    "info3": "Based in Luxemburg",
+    "info4": "Open to Work"
   },
   "aboutMe": {
     "subtitle": "Who I Am",

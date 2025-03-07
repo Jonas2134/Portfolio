@@ -1,5 +1,15 @@
 <div class="strip">
-    <p class="font-karla" [@scrollLeft]="state" (@scrollLeft.done)="toggleState()">
-        Test test test
-    </p>
+    <div class="marquee-container font-karla" [@scrollLeft]="state" (@scrollLeft.done)="toggleState()">
+        <div>
+            @for (info of infos; track $index) {
+            <span>{{ info | translate }}</span> <span class="point">·</span>
+            }
+        </div>
+
+        <div>
+            @for (info of infos; track $index) {
+            <span>{{ info | translate }}</span> <span class="point">·</span>
+            }
+        </div>
+    </div>
 </div>

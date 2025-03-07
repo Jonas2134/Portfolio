@@ -5,7 +5,11 @@
   },
   "landingPage": {
     "title": "Frontend Entwickler",
-    "btn1": "Check meine Projekte"
+    "btn1": "Check meine Projekte",
+    "info1": "Verfügbar für Remote-Arbeit",
+    "info2": "Frontend Entwickler",
+    "info3": "Sitz in Luxemburg",
+    "info4": "Offen für Arbeit"
   },
   "aboutMe": {
     "subtitle": "Wer ich bin",
