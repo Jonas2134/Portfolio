@@ -23,7 +23,7 @@ export class ContactMeComponent {
     privacyAccepted: [false, Validators.requiredTrue]
   });
 
-  mailTest = true;
+  mailTest = false;
   submitted = false;
 
   post = {
