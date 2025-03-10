@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { NgClickOutsideDirective } from 'ng-click-outside2';
 import { FullLogoComponent } from '../full-logo/full-logo.component';
 import { MinimumLogoComponent } from '../minimum-logo/minimum-logo.component';
@@ -25,7 +25,7 @@ export class HeaderComponent {
   isVisible: boolean = false;
   screenSize = this.ScreenSizeService.screenSize;
 
-  constructor() {}
+  constructor(private viewportScroller: ViewportScroller) {}
 
   toggleMenu() {
     this.isVisible = !this.isVisible;
@@ -37,5 +37,9 @@ export class HeaderComponent {
 
   onClickedOutside(event: Event) {
     if (this.isVisible) this.isVisible = false;
+  }
+
+  scrollToComponent(): void {
+    this.viewportScroller.scrollToAnchor('footer');
   }
 }

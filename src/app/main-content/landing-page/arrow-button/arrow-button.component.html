@@ -1,3 +1,3 @@
-<button class="arrow-button">
+<button class="arrow-button" [routerLink]="['/']" fragment="about-me">
     <span [@arrowBounce]="state" (@arrowBounce.done)="toggleState()">↓</span>
 </button>

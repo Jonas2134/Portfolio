@@ -7,8 +7,8 @@ export class ScreenSizeService {
   private windowWidth = signal(window.innerWidth);
   public screenSize = computed(() => {
     const width = this.windowWidth();
-    if (width < 650) {
-      return 'small';
+    if (width < 1100) {
+      return 'smallIcon';
     } else if (width < 1000) {
       return 'medium';
     } else {

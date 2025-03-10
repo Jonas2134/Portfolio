@@ -7,12 +7,12 @@
         </div>
     
         <div>
-            <app-full-logo [width]="300" [height]="74"></app-full-logo>
+            <app-full-logo (click)="scrollToComponent()" [width]="300" [height]="74"></app-full-logo>
         </div>
         }
         @default {
         <div>
-            <app-minimum-logo [width]="94" [height]="74"></app-minimum-logo>
+            <app-minimum-logo (click)="scrollToComponent()" [width]="94" [height]="74"></app-minimum-logo>
         </div>
         <div (click)="toggleMenu()">
             <svg class="menu-icon" width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">

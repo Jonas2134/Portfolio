@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { trigger, transition, animate, style, keyframes } from '@angular/animations';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-arrow-button',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './arrow-button.component.html',
   styleUrl: './arrow-button.component.scss',
   animations: [

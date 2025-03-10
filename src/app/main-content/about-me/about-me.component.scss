@@ -10,7 +10,7 @@ section {
   overflow: hidden;
 
   @media (max-width: 1300px) {
-    @include dFlex($gap: 90px, $direction: column);
+    @include dFlex($gap: 90px, $direction: column-reverse);
     padding: 112px 180px;
   }
 

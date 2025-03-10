@@ -3,10 +3,10 @@
         <div>
             @switch (screenSize()) {
             @case ('large') {
-            <app-full-logo [width]="132.14" [height]="48"></app-full-logo>
+            <app-full-logo (click)="scrollToTop()" [width]="132.14" [height]="48"></app-full-logo>
             }
             @default {
-            <app-minimum-logo [width]="68" [height]="48"></app-minimum-logo>
+            <app-minimum-logo (click)="scrollToTop()" [width]="68" [height]="48"></app-minimum-logo>
             }
             }
         </div>
