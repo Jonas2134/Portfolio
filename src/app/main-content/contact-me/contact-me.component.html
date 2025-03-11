@@ -1,5 +1,5 @@
 <section class="font-karla">
-    <div class="contact-container">
+    <article class="contact-container">
         <h2>{{ 'global.contactMe' | translate }}</h2>
 
         <h1 class="font-firacode" [innerHTML]="'form.title' | translate"></h1>
@@ -13,9 +13,9 @@
             <span>{{ 'form.text2' | translate }}</span>
             <span class="form-green">{{ 'global.letsTalk' | translate }}!</span>
         </p>
-    </div>
+    </article>
 
-    <div class="form-container">
+    <article class="form-container">
         <form [formGroup]="contactData" (ngSubmit)="onSubmit()">
             <p class="input-field border-top">
                 <label for="name" class="font-firacode">{{ 'form.q1' | translate }}</label>
@@ -76,5 +76,5 @@
             <app-message-confirmation class="message-dialog"></app-message-confirmation>
             }
         </form>
-    </div>
+    </article>
 </section>

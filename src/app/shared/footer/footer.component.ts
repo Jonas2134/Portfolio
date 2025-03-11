@@ -18,7 +18,6 @@ export class FooterComponent {
   RouterStateService = inject(RouterStateService);
 
   screenSize = this.ScreenSizeService.screenSize;
-  routerState = this.RouterStateService.activeComponent();
 
   constructor(private viewportScroller: ViewportScroller) {}
 
