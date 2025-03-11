@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
 export class LandingPageComponent {
   private ScreenSizeService = inject(ScreenSizeService);
 
-  screenSize = this.ScreenSizeService.screenSize;
+  screenSize = this.ScreenSizeService.visibleIcon;
 
   constructor() {}
 }

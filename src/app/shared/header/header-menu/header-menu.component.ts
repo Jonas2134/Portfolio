@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { LangChangeEvent, TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+import { RouterStateService } from '../../../service/router-state.service';
 
 @Component({
   selector: 'app-header-menu',
@@ -13,6 +14,8 @@ import { RouterLink } from '@angular/router';
 export class HeaderMenuComponent implements OnInit{
   @Input() isVisible: boolean = false;
   @Output() close = new EventEmitter<void>();
+  
+  RouterStateService = inject(RouterStateService);
 
   isEnglish!: boolean;
 

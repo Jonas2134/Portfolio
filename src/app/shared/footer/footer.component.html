@@ -22,7 +22,11 @@
         <a href="https://github.com/Jonas2134" target="_blank" rel="noopener noreferrer">Github</a>
         <a href="https://www.linkedin.com/in/jonas-stiefer-663b70252" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto: connect@jonas-stiefer.com">Email</a>
-        <a [routerLink]="['/imprint']">Legal Notice</a>
+        @if (RouterStateService.activeComponent() === 'Main' || RouterStateService.activeComponent() === 'Privacy') {
+        <a [routerLink]="['/imprint']">Imprint</a>
+        }
+        @if (RouterStateService.activeComponent() === 'Main' || RouterStateService.activeComponent() === 'Imprint') {
         <a [routerLink]="['/privacy']">Privacy Policy</a>
+        }
     </div>
 </footer>
