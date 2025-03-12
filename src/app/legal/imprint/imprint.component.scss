@@ -7,7 +7,21 @@ section {
   margin-right: auto;
   padding: 0 92px;
 
+  @media (max-width: 1000px) {
+    padding: 0 70px;
+  }
+
+  @media (max-width: 850px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 0 16px;
+  }
+
   > div {
+    max-width: 600px;
+    width: 100%;
     border: 1px solid #3dcfb6;
     border-radius: 30px;
     padding: 56px;
@@ -66,5 +80,21 @@ a {
 
   &:hover {
     color: #ffffff;
+  }
+}
+
+.headeline {
+  @include dFlex($justify: space-between);
+
+  > svg {
+    cursor: pointer;
+
+    path {
+      transition: fill 0.3s ease;
+    }
+
+    &:hover path {
+      fill: #3dcfb6;
+    }
   }
 }

@@ -44,9 +44,9 @@ header {
 .burger-menu {
   position: fixed;
   right: 0;
-  top: 25px;
+  top: 0;
+}
 
-  @media (max-width: 550px) {
-    top: 16px;
-  }
+.hidden {
+  display: none;
 }

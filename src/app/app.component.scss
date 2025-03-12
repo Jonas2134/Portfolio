@@ -22,4 +22,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-height: 750px) {
+    justify-content: flex-end;
+  }
 }
