@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { TranslateService } from '@ngx-translate/core';
-import { NavigationService } from './service/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +17,16 @@ export class AppComponent {
   isHidden = false;
   private lastScrollTop = 0;
 
-  constructor(private translate: TranslateService, private navigation: NavigationService) {
+  constructor(private translate: TranslateService) {
     this.translate.addLangs(['en', 'de']);
     this.translate.setDefaultLang('en');
-    this.translate.use('en');
+
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang && this.translate.getLangs().includes(savedLang)) {
+      this.translate.use(savedLang);
+    } else {
+      this.translate.use('en');
+    }
   }
 
   @HostListener('window:scroll', [])

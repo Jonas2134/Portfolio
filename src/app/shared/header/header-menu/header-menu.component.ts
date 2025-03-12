@@ -36,8 +36,8 @@ export class HeaderMenuComponent implements OnInit{
   changeLanguage(event: Event): void {
     const target = event.target as HTMLInputElement;
     const newLang = target.checked ? 'en' : 'de';
-
     this.translate.use(newLang);
+    localStorage.setItem('lang', newLang);
     this.isEnglish = newLang === 'en';
   }
 }
