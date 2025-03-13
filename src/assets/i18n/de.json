@@ -63,6 +63,12 @@
     "errCheckbox": "Bitte bestätigen Sie die Datenschutzbestimmungen.",
     "confirmDialog": "Danke, Ihre Nachricht wurde abgeschickt!"
   },
+  "imprint": {
+    "title1": "Impressum",
+    "title2": "Kontakt",
+    "text1": "Telefon:",
+    "text2": "Quelle:"
+  },
   "global": {
     "aboutMe": "Über mich",
     "letsTalk": "Lassen Sie uns reden",

@@ -63,6 +63,12 @@
     "errCheckbox": "Please confirm the privacy policy.",
     "confirmDialog": "Thank you, your message has been sent!"
   },
+  "imprint": {
+    "title1": "Imprint",
+    "title2": "Contact",
+    "text1": "Telephone:",
+    "text2": "Source:"
+  },
   "global": {
     "aboutMe": "About me",
     "letsTalk": "Let's Talk",

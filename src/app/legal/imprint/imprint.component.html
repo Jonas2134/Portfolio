@@ -1,7 +1,7 @@
 <section>
     <div class="font-karla">
         <div class="headeline">
-            <h1 class="font-firacode">Impressum</h1>
+            <h1 class="font-firacode">{{ 'imprint.title1' | translate }}</h1>
             <svg [routerLink]="['/']" class="back" width="19" height="20" viewBox="0 0 19 20" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -18,14 +18,14 @@
             L-9940 Asselborn
         </p>
 
-        <h2 class="font-firacode">Kontakt</h2>
+        <h2 class="font-firacode">{{ 'imprint.title2' | translate }}</h2>
 
         <p>
-            Telefon: +352 621 764 561
+            {{ 'imprint.text1' | translate }} +352 621 764 561
             <br />
             E-Mail: connect&#64;jonas-stiefer.com
         </p>
 
-        <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+        <p>{{ 'imprint.text2' | translate }} <a href="https://www.e-recht24.de">e-recht24.de</a></p>
     </div>
 </section>

@@ -22,7 +22,13 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'top',
+        anchorScrolling: 'enabled',
+      })
+    ),
     provideAnimations(),
     provideAnimationsAsync(),
     provideZoneChangeDetection({ eventCoalescing: true }),
